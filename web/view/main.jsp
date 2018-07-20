@@ -28,7 +28,7 @@
 	<nav
 		class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">BLOCAST</a>
+			<a class="navbar-brand" href="main.bc">BLOCAST</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button"
 				data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -45,11 +45,18 @@
 					</li>
 					<li class="nav-item"><a class="nav-link" href="contact.bc">Contact</a>
 					</li>
+			<c:choose>
+				<c:when test="${loginid == null }">
 					<li class="nav-item"><a class="nav-link" href="login.bc">Login</a>
-					</li>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="register.bc">SignUp</a>
 					</li>
+				</c:when>
+				<c:otherwise>	
+					<li><a href="logout.hw">LOGOUT</a></li>
+					<li>${loginid } ดิ </li>
+				</c:otherwise>
+			</c:choose>
 				</ul>
 			</div>
 		</div>
@@ -64,5 +71,18 @@
 			</c:otherwise>
 		</c:choose>
 	</section>
+	  <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
