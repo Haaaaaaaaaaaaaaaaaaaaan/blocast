@@ -10,19 +10,19 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('../img/blockchain.png')">
+          <div class="carousel-item active" style="background-image: url('img/blockchain.png')">
             <div class="carousel-caption d-none d-md-block" style="color:black; font-family: 'Nanum Gothic', sans-serif;">
               <p>이제, 코드를 어디서나 확인하고 질답하세요.</p>
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('../img/bigdata.png')">
+          <div class="carousel-item" style="background-image: url('img/bigdata.png')">
             <div class="carousel-caption d-none d-md-block" style="color:black; font-family: 'Nanum Gothic', sans-serif;">
               <p>서로 모르는 부분을 확인하고 답해주며 실력을 향상시키세요.</p>
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('../img/iot.png')">
+          <div class="carousel-item" style="background-image: url('img/iot.png')">
             <div class="carousel-caption d-none d-md-block" style="color:black;">
               <p>혼자서 개발하기 힘들다구요? 서로 도움이 되어주세요!</p>
             </div>
@@ -201,5 +201,5 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
 	<typeAliases>
 		<typeAlias type="com.bc.vo.UsersVO" alias="users"/>
 		<typeAlias type="com.bc.vo.FilesVO" alias="files"/>
-		<typeAlias type="com.bc.vo.FoldersVO" alias="folders"/>
+		<typeAlias type="com.bc.vo.FolderVO" alias="folders"/>
 		<typeAlias type="com.bc.vo.ClassVO" alias="class"/>
 		<typeAlias type="com.bc.vo.TagListVO" alias="taglist"/>
 		<typeAlias type="com.bc.vo.TagVO" alias="tag"/>
