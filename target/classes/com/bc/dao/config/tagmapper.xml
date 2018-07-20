@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bc.dao.mapper.TagMapper">
+	
+	
+	<select id="select" parameterType="String" resultType="tag">
+		SELECT * FROM TAG WHERE ID=#{obj}
+	</select>
+	<select id="selectall" resultType="tag">
+		SELECT * FROM TAG
+	</select>
+	<insert id="insert" parameterType="tag">
+		INSERT INTO TAG VALUES (TAG_ID_SEQ,#{name})
+	</insert>
+	<update id="update" parameterType="tag">
+		UPDATE TAG SET NAME=#{name} WHERE ID=#{id}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM TAG WHERE ID=#{obj}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+

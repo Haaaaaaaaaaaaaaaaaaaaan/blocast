@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bc.dao.mapper.AthumbMapper">
+	
+	
+	<select id="select" parameterType="String" resultType="athumb">
+		SELECT * FROM ANSWER_THUMBSUP WHERE ID=#{obj}
+	</select>
+	<select id="selectall" resultType="athumb">
+		SELECT * FROM ANSWER_THUMBSUP
+	</select>
+	<insert id="insert" parameterType="athumb">
+		INSERT INTO ANSWER_THUMBSUP VALUES (ANSWER_THUMBSUP_ID_SEQ,#{answer_id},#{user_id})
+	</insert>
+	<update id="update" parameterType="athumb">
+		UPDATE ANSWER_THUMBSUP SET ANSWER_ID=#{answer_id},USER_ID=#{user_id} WHERE ID=#{id}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM ANSWER_THUMBSUP WHERE ID=#{obj}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+

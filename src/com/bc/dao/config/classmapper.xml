@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bc.dao.mapper.ClassMapper">
+	
+	
+	<select id="select" parameterType="String" resultType="files">
+		SELECT * FROM CLASS WHERE ID=#{obj}
+	</select>
+	<select id="selectall" resultType="class">
+		SELECT * FROM CLASS
+	</select>
+	<insert id="insert" parameterType="class">
+		INSERT INTO CLASS VALUES (CLASS_ID_SEQ,#{name},SYSDATE)
+	</insert>
+	<update id="update" parameterType="class">
+		UPDATE CLASS SET NAME=#{name} WHERE ID=#{id}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM CLASS WHERE ID=#{obj}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+

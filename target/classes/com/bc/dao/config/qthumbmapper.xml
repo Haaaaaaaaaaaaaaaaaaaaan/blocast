@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bc.dao.mapper.QthumbMapper">
+	
+	
+	<select id="select" parameterType="String" resultType="qthumb">
+		SELECT * FROM QUESTION_THUMBSUP WHERE ID=#{obj}
+	</select>
+	<select id="selectall" resultType="qthumb">
+		SELECT * FROM QUESTION_THUMBSUP
+	</select>
+	<insert id="insert" parameterType="qthumb">
+		INSERT INTO QUESTION_THUMBSUP VALUES (QUESTION_THUMBSUP_ID_SEQ,#{question_id},#{user_id})
+	</insert>
+	<update id="update" parameterType="qthumb">
+		UPDATE QUESTION_THUMBSUP SET QUESTION_ID=#{question_id},USER_ID=#{user_id} WHERE ID=#{id}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM QUESTION_THUMBSUP WHERE ID=#{obj}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+

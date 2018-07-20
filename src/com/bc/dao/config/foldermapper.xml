@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bc.dao.mapper.FolderMapper">
+	
+	
+	<select id="select" parameterType="String" resultType="folders">
+		SELECT * FROM FOLDERS WHERE ID=#{obj}
+	</select>
+	<select id="selectall" resultType="folders">
+		SELECT * FROM FOLDERS
+	</select>
+	<insert id="insert" parameterType="folders">
+		INSERT INTO FOLDERS VALUES (FOLDERS_ID_SEQ,#{folder_id},#{name})
+	</insert>
+	<update id="update" parameterType="folders">
+		UPDATE FOLDERS SET FOLDER_ID=#{folder_id},NAME=#{name} WHERE ID=#{id}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM FOLDERS WHERE ID=#{obj}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
