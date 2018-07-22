@@ -43,7 +43,7 @@
 					</li>
 					<li class="nav-item"><a class="nav-link" href="qna.bc">QnA</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="contact.bc">Contact</a>
+					<li class="nav-item"><a class="nav-link" href="about.bc">About</a>
 					</li>
 			<c:choose>
 				<c:when test="${loginid == null }">

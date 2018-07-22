@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/modern-business.css" rel="stylesheet">
+    
 <!DOCTYPE>
   <header>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

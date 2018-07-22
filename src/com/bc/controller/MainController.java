@@ -37,6 +37,14 @@ public class MainController {
 		mv.addObject("centerpage","qna");
 		return mv;
 	}
+	//about페이지
+	@RequestMapping("/about.bc")
+	public ModelAndView about() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("main");
+		mv.addObject("centerpage","about");
+		return mv;
+	}
 	
 	//login페이지
 	@RequestMapping("/login.bc")
