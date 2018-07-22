@@ -3,11 +3,13 @@ package com.bc.dao;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.bc.dao.mapper.UserMapper;
 import com.bc.frame.Dao;
 import com.bc.vo.UsersVO;
 
+@Repository("udao")
 public class UsersDao implements Dao<UsersVO,String>{
 
 	@Autowired
@@ -32,10 +34,21 @@ public class UsersDao implements Dao<UsersVO,String>{
 	public UsersVO select(String v) throws Exception {
 		return mapper.select(v);
 	}
+	@Override
+	public UsersVO selectSearch(String v) throws Exception {
+		return mapper.selectSearch(v);
+	}
 
 	@Override
 	public ArrayList<UsersVO> selectall() throws Exception {
 		return mapper.selectall();
+	}
+
+	@Override
+	public void insertUser(String v, UsersVO t) throws Exception {
+		// TODO Auto-generated method stub
+		mapper.insertUser(v,t);
+		
 	}
 
 }

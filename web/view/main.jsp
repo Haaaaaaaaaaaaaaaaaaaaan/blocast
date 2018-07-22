@@ -27,7 +27,7 @@
 	<!-- Navigation -->
 	<nav
 		class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-		<div class="container">
+		<div class="container row">
 			<a class="navbar-brand" href="main.bc">BLOCAST</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button"
 				data-toggle="collapse" data-target="#navbarResponsive"
@@ -35,26 +35,26 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="main.bc">Home</a>
+			<div class="collapse navbar-collapse col-md-7" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto row">
+					<li class="nav-item col-md-3 col-lg-2 col-sm-2"><a class="nav-link" href="main.bc">Home</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="codelist.bc">Code</a>
+					<li class="nav-item col-md-3 col-lg-2 col-sm-2"><a class="nav-link" href="codelist.bc">Code</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="qna.bc">QnA</a>
+					<li class="nav-item col-md-3 col-lg-2 col-sm-2"><a class="nav-link" href="qna.bc">QnA</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="about.bc">About</a>
+					<li class="nav-item col-md-3 col-lg-2 col-sm-2"><a class="nav-link" href="about.bc">About</a>
 					</li>
 			<c:choose>
 				<c:when test="${loginid == null }">
-					<li class="nav-item"><a class="nav-link" href="login.bc">Login</a>
+					<li class="nav-item col-md-3 col-lg-2 col-sm-2"><a class="nav-link" href="login.bc">Login</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="register.bc">SignUp</a>
+					<li class="nav-item col-md-3 col-lg-2 col-sm-2"><a class="nav-link" href="register.bc">SignUp</a>
 					</li>
 				</c:when>
 				<c:otherwise>	
-					<li><a href="logout.hw">LOGOUT</a></li>
-					<li>${loginid } ดิ </li>
+					<li class="col-md-3 col-lg-2 col-sm-2"><a href="logout.bc">LOGOUT</a></li>
+					<li class="col-md-3 col-lg-2 col-sm-2" style="color:white;">${loginid } ดิ </li>
 				</c:otherwise>
 			</c:choose>
 				</ul>

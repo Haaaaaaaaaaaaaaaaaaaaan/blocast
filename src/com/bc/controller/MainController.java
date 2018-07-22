@@ -1,5 +1,6 @@
 package com.bc.controller;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -7,11 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bc.frame.Service;
+import com.bc.vo.UsersVO;
+
 @Controller
 public class MainController {
 
-	//@Resource(name="uservice")
-	//Service<UsersVO, String> uservice;
+	@Resource(name="uservice")
+	Service<UsersVO, String> uservice;
 
 	//홈
 	@RequestMapping("/main.bc")
@@ -47,19 +51,44 @@ public class MainController {
 	}
 	
 	//login페이지
-	@RequestMapping("/login.bc")
-	public ModelAndView login() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("main");
-		mv.addObject("centerpage","login");
-		return mv;
-	}
+		@RequestMapping("/login.bc")
+		public ModelAndView login() {
+			ModelAndView mv = new ModelAndView();
+			mv.setViewName("main");
+			mv.addObject("centerpage","user/login");
+			return mv;
+		}
+		
 	
-	//loginimpl
-	@RequestMapping("/loginimpl.bc")
-	public ModelAndView loginimpl(HttpServletRequest request) {
-		return null;
-	}
+		//loginimpl
+		@RequestMapping("/loginimpl.bc")
+		public ModelAndView loginimpl(HttpServletRequest request) {
+			String id = request.getParameter("id");
+			String pwd = request.getParameter("pwd");
+			HttpSession session = request.getSession();
+			ModelAndView mv = new ModelAndView();
+			ModelAndView mv2 = new ModelAndView();
+			UsersVO user = null;
+			
+			try {
+				user = uservice.get(id);
+				if(user == null || !(user.getPwd().equals(pwd))) {
+					//null일때 처리해주면됨
+					mv.setViewName("main");
+					mv.addObject("centerpage","user/login");
+					mv.addObject("resultt", "asdf");
+					
+					return mv;
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			mv2.setViewName("main");
+			mv2.addObject("centerpage","center");
+			session.setAttribute("loginid", id);
+			return mv2;
+		}
 	
 	//로그아웃
 	@RequestMapping("/logout.bc")
@@ -80,25 +109,28 @@ public class MainController {
 	public ModelAndView register() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
-		mv.addObject("centerpage","register");
+		mv.addObject("centerpage","user/register");
 		return mv;
 	}
 	
-//	//registerimpl
-//	@RequestMapping("/registerimpl.bc")
-//	public ModelAndView registerimpl(UsersVO user) {
-//
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("main");
-//		try {
-//			uservice.register(user);
-//			mv.addObject("centerpage", "registerok");
-//		} catch (Exception e) {
-//			mv.addObject("centerpage", "registerfail");
-//			e.printStackTrace();
-//		}
-//
-//		return mv;
-//	}
+	//registerimpl
+		@RequestMapping("/registerimpl.bc")
+		public ModelAndView registerimpl(HttpServletRequest request, UsersVO user) {
+
+			ModelAndView mv = new ModelAndView();
+			HttpSession session = request.getSession();
+			mv.setViewName("main");
+			try {
+				uservice.register(user);	
+				mv.addObject("centerpage", "center");
+				session.setAttribute("loginid", user.getId());
+				return mv;
+			} catch (Exception e) {
+				mv.addObject("centerpage", "user/register");
+				mv.addObject("resultt", "asdd");
+				e.printStackTrace();
+				return mv;
+			}
+		}
 	
 }

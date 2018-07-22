@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import com.bc.frame.Dao;
 import com.bc.frame.Service;
 import com.bc.vo.FolderVO;
+import com.bc.vo.UsersVO;
 
 public class FolderService implements Service<FolderVO, String>{
 	
@@ -41,6 +42,18 @@ public class FolderService implements Service<FolderVO, String>{
 	public ArrayList<FolderVO> get() throws Exception {
 		// TODO Auto-generated method stub
 		return fddao.selectall();
+	}
+
+	@Override
+	public UsersVO getSearch(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void registerUser(String v, FolderVO t) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 

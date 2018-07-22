@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.bc.dao.mapper.FolderMapper;
 import com.bc.frame.Dao;
 import com.bc.vo.FolderVO;
+import com.bc.vo.UsersVO;
 
 public class FolderDao implements Dao<FolderVO,String>{
 
@@ -36,6 +37,18 @@ public class FolderDao implements Dao<FolderVO,String>{
 	@Override
 	public ArrayList<FolderVO> selectall() throws Exception {
 		return mapper.selectall();
+	}
+
+	@Override
+	public UsersVO selectSearch(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insertUser(String v, FolderVO t) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

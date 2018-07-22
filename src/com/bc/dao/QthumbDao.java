@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.bc.dao.mapper.QthumbMapper;
 import com.bc.frame.Dao;
 import com.bc.vo.QuestionThumbsupVO;
+import com.bc.vo.UsersVO;
 
 public class QthumbDao implements Dao<QuestionThumbsupVO,String>{
 
@@ -36,6 +37,18 @@ public class QthumbDao implements Dao<QuestionThumbsupVO,String>{
 	@Override
 	public ArrayList<QuestionThumbsupVO> selectall() throws Exception {
 		return mapper.selectall();
+	}
+
+	@Override
+	public UsersVO selectSearch(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insertUser(String v, QuestionThumbsupVO t) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

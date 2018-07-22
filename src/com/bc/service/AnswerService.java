@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import com.bc.frame.Dao;
 import com.bc.frame.Service;
 import com.bc.vo.AnswerVO;
+import com.bc.vo.UsersVO;
 
 public class AnswerService implements Service<AnswerVO, String>{
 	
@@ -40,6 +41,19 @@ public class AnswerService implements Service<AnswerVO, String>{
 	public ArrayList<AnswerVO> get() throws Exception {
 		// TODO Auto-generated method stub
 		return adao.selectall();
+	}
+
+	@Override
+	public UsersVO getSearch(String v) throws Exception {
+		return null;
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void registerUser(String v, AnswerVO t) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 

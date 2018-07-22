@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import com.bc.frame.Dao;
 import com.bc.frame.Service;
 import com.bc.vo.TagListVO;
+import com.bc.vo.UsersVO;
 
 public class TagListService implements Service<TagListVO,String>{
 
@@ -36,6 +37,18 @@ public class TagListService implements Service<TagListVO,String>{
 	@Override
 	public ArrayList<TagListVO> get() throws Exception {
 		return tldao.selectall();
+	}
+
+	@Override
+	public UsersVO getSearch(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void registerUser(String v, TagListVO t) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.bc.dao.mapper.TagListMapper;
 import com.bc.frame.Dao;
 import com.bc.vo.TagListVO;
+import com.bc.vo.UsersVO;
 
 public class TagListDao implements Dao<TagListVO,String>{
 
@@ -36,6 +37,18 @@ public class TagListDao implements Dao<TagListVO,String>{
 	@Override
 	public ArrayList<TagListVO> selectall() throws Exception {
 		return mapper.selectall();
+	}
+
+	@Override
+	public UsersVO selectSearch(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insertUser(String v, TagListVO t) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

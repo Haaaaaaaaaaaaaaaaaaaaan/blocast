@@ -8,6 +8,7 @@ import com.bc.frame.Dao;
 import com.bc.frame.Service;
 import com.bc.vo.UsersVO;
 
+@org.springframework.stereotype.Service("uservice")
 public class UsersService implements Service<UsersVO, String>{
 	@Resource(name = "udao")
 	Dao<UsersVO, String> udao;
@@ -15,6 +16,10 @@ public class UsersService implements Service<UsersVO, String>{
 	@Override
 	public void register(UsersVO t) throws Exception {
 		udao.insert(t);
+	}
+	@Override
+	public void registerUser(String v, UsersVO t) throws Exception {
+		udao.insertUser(v,t);
 	}
 
 	@Override
@@ -31,9 +36,15 @@ public class UsersService implements Service<UsersVO, String>{
 
 	@Override
 	public UsersVO get(String v) throws Exception {
-		// TODO Auto-generated method stub
 		return udao.select(v);
 	}
+	
+	@Override
+	public UsersVO getSearch(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return udao.selectSearch(v);
+	}
+	
 
 	@Override
 	public ArrayList<UsersVO> get() throws Exception {

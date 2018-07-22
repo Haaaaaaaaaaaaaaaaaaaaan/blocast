@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import com.bc.frame.Dao;
 import com.bc.frame.Service;
 import com.bc.vo.QuestionThumbsupVO;
+import com.bc.vo.UsersVO;
 
 public class QuestionThumbsupService implements Service<QuestionThumbsupVO, String>{
 	
@@ -41,6 +42,18 @@ public class QuestionThumbsupService implements Service<QuestionThumbsupVO, Stri
 	public ArrayList<QuestionThumbsupVO> get() throws Exception {
 		// TODO Auto-generated method stub
 		return qtdao.selectall();
+	}
+
+	@Override
+	public UsersVO getSearch(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void registerUser(String v, QuestionThumbsupVO t) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
