@@ -10,7 +10,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('img/blockchain1.png')">
+          <div class="carousel-item active" style="background-image: url('img/blockchain.png')">
             <div class="carousel-caption d-none d-md-block" style="color:black; font-family: 'Nanum Gothic', sans-serif;">
               <p>이제, 코드를 어디서나 확인하고 질답하세요.</p>
             </div>
@@ -23,18 +23,18 @@
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
           <div class="carousel-item" style="background-image: url('img/iot.png')">
-            <div class="carousel-caption d-none d-md-block" style="color:black;">
+            <div class="carousel-caption d-none d-md-block" style="color:black; font-family: 'Nanum Gothic', sans-serif;">
               <p>혼자서 개발하기 힘들다구요? 서로 도움이 되어주세요!</p>
             </div>
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only" style="color:black;">Previous</span>
+          <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only" style="color:black;">Next</span>
+          <span class="sr-only">Next</span>
         </a>
       </div>
     </header>
@@ -48,7 +48,7 @@
       <div class="row">
         <div class="col-lg-4 mb-4">
           <div class="card h-50">
-            <h4 class="card-header" style="font-family: 'Nanum Gothic Coding', monospace;">블록체인 핀테크 전문가</h4>
+            <h4 class="card-header" style="font-family: 'Nanum Gothic Coding', monospace;">블록체인 전문가</h4>
             <div class="card-body">
               <p class="card-text">Java, SQL, Spring, Jquery, Ajax, Spring, Linux, Blockchain Infra 등 수업에서 배운 다양한 코드를 업로드하고 확인하세요.</p>
             </div>
