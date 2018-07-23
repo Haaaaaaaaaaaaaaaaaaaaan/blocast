@@ -17,6 +17,9 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="selectauthor" parameterType="String" resultType="question">
 		SELECT * FROM QUESTION where AUTHOR=#{obj}
 	</select>
+	<select id="selectclass" parameterType="String" resultType="question">
+		SELECT * FROM QUESTION where CLASS_ID=#{obj}
+	</select>
 	<insert id="insert" parameterType="question">
 		INSERT INTO QUESTION VALUES (QUESTION_ID_SEQ,#{title},#{author},#{thumbsup},SYSDATE,#{contents},#{class_id})
 	</insert>

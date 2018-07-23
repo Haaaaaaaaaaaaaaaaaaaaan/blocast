@@ -60,4 +60,9 @@ public class QuestionDao implements Dao<QuestionVO,String>, QDao<QuestionVO,Stri
 		
 	}
 
+	@Override
+	public ArrayList<QuestionVO> selectclass(String obj) throws Exception {
+		return mapper.selectclass(obj);
+	}
+
 }
