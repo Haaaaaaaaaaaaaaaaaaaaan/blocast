@@ -51,4 +51,34 @@ public class QuestionDao implements Dao<QuestionVO,String>{
 		
 	}
 
+	@Override
+	public ArrayList<QuestionVO> selectname(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionVO> selectqid(String obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionVO> selecttid(String obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionVO> selectnamecont(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.selectnamecont(obj);
+	}
+
+	@Override
+	public ArrayList<QuestionVO> selectauthor(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.selectauthor(obj);
+	}
+
 }

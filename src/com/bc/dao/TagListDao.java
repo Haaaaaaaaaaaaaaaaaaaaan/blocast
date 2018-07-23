@@ -50,5 +50,35 @@ public class TagListDao implements Dao<TagListVO,String>{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public ArrayList<TagListVO> selectname(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<TagListVO> selectqid(String obj) {
+		// TODO Auto-generated method stub
+		return mapper.selectqid(obj);
+	}
+
+	@Override
+	public ArrayList<TagListVO> selecttid(String obj) {
+		// TODO Auto-generated method stub
+		return mapper.selecttid(obj);
+	}
+
+	@Override
+	public ArrayList<TagListVO> selectnamecont(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<TagListVO> selectauthor(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

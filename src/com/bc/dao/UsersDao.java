@@ -51,4 +51,34 @@ public class UsersDao implements Dao<UsersVO,String>{
 		
 	}
 
+	@Override
+	public ArrayList<UsersVO> selectname(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<UsersVO> selectqid(String obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<UsersVO> selecttid(String obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<UsersVO> selectnamecont(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<UsersVO> selectauthor(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -11,6 +11,12 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="selectall" resultType="taglist">
 		SELECT * FROM TAGLIST
 	</select>
+	<select id="selectqid" parameterType="String" resultType="taglist">
+		SELECT * FROM TAGLIST where QUESTION_ID = #{obj}
+	</select>
+	<select id="selecttid" parameterType="String" resultType="taglist">
+		SELECT * FROM TAGLIST where TAG_ID = #{obj}
+	</select>
 	<insert id="insert" parameterType="taglist">
 		INSERT INTO TAGLIST VALUES (TAGLIST_ID_SEQ,#{question_id},#{tag_id})
 	</insert>

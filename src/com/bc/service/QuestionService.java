@@ -56,6 +56,36 @@ public class QuestionService implements Service<QuestionVO, String>{
 		
 	}
 
+	@Override
+	public ArrayList<QuestionVO> getName(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionVO> getQid(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionVO> getTid(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionVO> getNameCont(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return qdao.selectnamecont(v);
+	}
+
+	@Override
+	public ArrayList<QuestionVO> getAuthor(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return qdao.selectauthor(v);
+	}
+
 
 	
 	

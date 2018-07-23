@@ -55,6 +55,36 @@ public class ClassService implements Service<ClassVO, String>{
 		
 	}
 
+	@Override
+	public ArrayList<ClassVO> getName(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<ClassVO> getQid(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<ClassVO> getTid(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<ClassVO> getNameCont(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<ClassVO> getAuthor(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 	
 	

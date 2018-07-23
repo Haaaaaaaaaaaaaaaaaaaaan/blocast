@@ -51,4 +51,34 @@ public class QthumbDao implements Dao<QuestionThumbsupVO,String>{
 		
 	}
 
+	@Override
+	public ArrayList<QuestionThumbsupVO> selectname(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionThumbsupVO> selectqid(String obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionThumbsupVO> selecttid(String obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionThumbsupVO> selectnamecont(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionThumbsupVO> selectauthor(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

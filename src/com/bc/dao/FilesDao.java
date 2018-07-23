@@ -51,4 +51,34 @@ public class FilesDao implements Dao<FilesVO,String>{
 		
 	}
 
+	@Override
+	public ArrayList<FilesVO> selectname(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<FilesVO> selectqid(String obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<FilesVO> selecttid(String obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<FilesVO> selectnamecont(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<FilesVO> selectauthor(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

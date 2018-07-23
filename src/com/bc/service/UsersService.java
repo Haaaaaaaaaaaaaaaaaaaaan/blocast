@@ -51,6 +51,31 @@ public class UsersService implements Service<UsersVO, String>{
 		// TODO Auto-generated method stub
 		return udao.selectall();
 	}
+	@Override
+	public ArrayList<UsersVO> getName(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public ArrayList<UsersVO> getQid(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public ArrayList<UsersVO> getTid(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public ArrayList<UsersVO> getNameCont(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public ArrayList<UsersVO> getAuthor(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

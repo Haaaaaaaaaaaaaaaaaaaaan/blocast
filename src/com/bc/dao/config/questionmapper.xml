@@ -11,6 +11,12 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="selectall" resultType="question">
 		SELECT * FROM QUESTION
 	</select>
+	<select id="selectnamecont" parameterType="String" resultType="question">
+		SELECT * FROM QUESTION where (TITLE like '%' || #{obj} || '%') or (CONTENTS like '%' || #{obj} || '%')
+	</select>
+	<select id="selectauthor" parameterType="String" resultType="question">
+		SELECT * FROM QUESTION where AUTHOR=#{obj}
+	</select>
 	<insert id="insert" parameterType="question">
 		INSERT INTO QUESTION VALUES (QUESTION_ID_SEQ,#{title},#{author},#{thumbsup},SYSDATE,#{contents},,#{class_id},#{state},#{imgname1},#{imgname2},#{imgname3})
 	</insert>

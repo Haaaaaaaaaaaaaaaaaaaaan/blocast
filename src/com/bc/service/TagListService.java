@@ -51,4 +51,34 @@ public class TagListService implements Service<TagListVO,String>{
 		
 	}
 
+	@Override
+	public ArrayList<TagListVO> getName(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<TagListVO> getQid(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return tldao.selectqid(v);
+	}
+
+	@Override
+	public ArrayList<TagListVO> getTid(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return tldao.selecttid(v);
+	}
+
+	@Override
+	public ArrayList<TagListVO> getNameCont(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<TagListVO> getAuthor(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

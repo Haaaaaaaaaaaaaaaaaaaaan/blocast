@@ -33,6 +33,7 @@ public class TagDao implements Dao<TagVO,String>{
 	public TagVO select(String v) throws Exception {
 		return mapper.select(v);
 	}
+	
 
 	@Override
 	public ArrayList<TagVO> selectall() throws Exception {
@@ -49,6 +50,36 @@ public class TagDao implements Dao<TagVO,String>{
 	public void insertUser(String v, TagVO t) throws Exception {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public ArrayList<TagVO> selectname(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.selectname(v);
+	}
+
+	@Override
+	public ArrayList<TagVO> selectqid(String obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<TagVO> selecttid(String obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<TagVO> selectnamecont(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<TagVO> selectauthor(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 

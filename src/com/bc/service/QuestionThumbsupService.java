@@ -55,6 +55,36 @@ public class QuestionThumbsupService implements Service<QuestionThumbsupVO, Stri
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public ArrayList<QuestionThumbsupVO> getName(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionThumbsupVO> getQid(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionThumbsupVO> getTid(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionThumbsupVO> getNameCont(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<QuestionThumbsupVO> getAuthor(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 
