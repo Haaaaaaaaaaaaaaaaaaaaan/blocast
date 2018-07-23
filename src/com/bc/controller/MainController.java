@@ -28,14 +28,14 @@ public class MainController {
 		return "main";
 	}
 	
-	//과목보기
-	@RequestMapping("/codemain.bc")
-	public ModelAndView codelist() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("main");
-		mv.addObject("centerpage","code/codemain");
-		return mv;
-	}
+//	//과목보기
+//	@RequestMapping("/codemain.bc")
+//	public ModelAndView codelist() {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("main");
+//		mv.addObject("centerpage","code/codemain");
+//		return mv;
+//	}
 	
 	//qna페이지
 	@RequestMapping("/qna.bc")
