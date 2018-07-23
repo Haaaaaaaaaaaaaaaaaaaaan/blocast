@@ -2,8 +2,7 @@ package com.bc.dao.mapper;
 
 import java.util.ArrayList;
 
-
-
+import com.bc.vo.QuestionVO;
 import com.bc.vo.TagVO;
 
 
@@ -14,5 +13,6 @@ public interface TagMapper {
 	public void update(TagVO obj);
 	public ArrayList<TagVO> selectname(String obj);
 	public TagVO select(String obj);
+	public TagVO selectrecent();
 	public ArrayList<TagVO> selectall();
 }

@@ -8,4 +8,5 @@ public interface QDao<T,V> {
 	public ArrayList<T> selectnamecont(String obj) throws Exception;
 	public ArrayList<T> selectauthor(String obj) throws Exception;
 	public ArrayList<T> selectclass(String obj) throws Exception;
+	public T selectrecent() throws Exception;
 }

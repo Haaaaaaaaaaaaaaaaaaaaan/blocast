@@ -19,6 +19,7 @@ public class QuestionDao implements Dao<QuestionVO,String>, QDao<QuestionVO,Stri
 	
 	@Override
 	public void insert(QuestionVO t) throws Exception {
+		System.out.println("before dao QVO t :" + t);
 		mapper.insert(t);
 	}
 
@@ -63,6 +64,11 @@ public class QuestionDao implements Dao<QuestionVO,String>, QDao<QuestionVO,Stri
 	@Override
 	public ArrayList<QuestionVO> selectclass(String obj) throws Exception {
 		return mapper.selectclass(obj);
+	}
+	@Override
+	public QuestionVO selectrecent() throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.selectrecent();
 	}
 
 }

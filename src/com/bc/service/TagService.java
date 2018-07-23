@@ -64,4 +64,10 @@ public class TagService implements Service<TagVO,String>, TService<TagVO,String>
 		
 	}
 
+	@Override
+	public TagVO getRecent() throws Exception {
+		// TODO Auto-generated method stub
+		return tdao.selectrecent();
+	}
+
 }

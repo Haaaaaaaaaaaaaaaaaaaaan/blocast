@@ -4,7 +4,9 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bc.dao.mapper.TagMapper">
 	
-	
+	<select id="selectrecent"  resultType="tag">
+		SELECT * FROM (SELECT * FROM TAG ORDER BY ID DESC) WHERE ROWNUM=1
+	</select>
 	<select id="select" parameterType="String" resultType="tag">
 		SELECT * FROM TAG WHERE ID=#{obj}
 	</select>

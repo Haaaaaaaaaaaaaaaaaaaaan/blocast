@@ -9,3 +9,4 @@ select seq_class.NEXTVAL FROM DUAL
 INSERT INTO CLASS values(seq_class.NEXTVAL,'name',sysdate);
 
 select * from USERS
+select * from question;

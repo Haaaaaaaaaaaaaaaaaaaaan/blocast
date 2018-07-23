@@ -77,5 +77,11 @@ public class QuestionService implements Service<QuestionVO, String>, QService<Qu
 	public ArrayList<QuestionVO> getClassid(String v) throws Exception {
 		return qdao.selectclass(v);
 	}
+
+	@Override
+	public QuestionVO getRecent() throws Exception {
+		// TODO Auto-generated method stub
+		return qdao.selectrecent();
+	}
 	
 }

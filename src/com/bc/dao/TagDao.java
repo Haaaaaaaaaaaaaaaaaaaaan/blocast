@@ -56,6 +56,12 @@ public class TagDao implements Dao<TagVO,String>, TDao<TagVO, String>{
 		// TODO Auto-generated method stub
 		mapper.insert(obj);
 	}
+
+	@Override
+	public TagVO selectrecent() throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.selectrecent();
+	}
 	
 
 }

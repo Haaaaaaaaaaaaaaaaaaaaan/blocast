@@ -29,6 +29,7 @@ PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
 		<mapper resource="com/bc/dao/config/qthumbmapper.xml"/>
 		<mapper resource="com/bc/dao/config/athumbmapper.xml"/>
  	</mappers>
+ 	
 </configuration>
 
 

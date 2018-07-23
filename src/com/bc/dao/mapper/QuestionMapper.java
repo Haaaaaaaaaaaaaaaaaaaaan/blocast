@@ -10,6 +10,7 @@ public interface QuestionMapper {
 	public void delete(String obj);
 	public void update(QuestionVO obj);
 	public QuestionVO select(String obj);
+	public QuestionVO selectrecent();
 	public ArrayList<QuestionVO> selectnamecont(String obj);
 	public ArrayList<QuestionVO> selectauthor(String obj);
 	public ArrayList<QuestionVO> selectclass(String obj);
