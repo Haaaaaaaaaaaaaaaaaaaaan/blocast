@@ -9,6 +9,7 @@ import com.bc.frame.Service;
 import com.bc.vo.FolderVO;
 import com.bc.vo.UsersVO;
 
+@org.springframework.stereotype.Service("fdservice")
 public class FolderService implements Service<FolderVO, String>{
 	
 	@Resource(name = "fddao")

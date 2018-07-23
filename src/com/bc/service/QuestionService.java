@@ -11,9 +11,10 @@ import com.bc.frame.Service;
 import com.bc.vo.QuestionVO;
 import com.bc.vo.UsersVO;
 
+@org.springframework.stereotype.Service("qservice")
 public class QuestionService implements Service<QuestionVO, String>, QService<QuestionVO, String>{
 	
-	@Resource(name = "dao")
+	@Resource(name = "qdao")
 	Dao<QuestionVO, String> dao;
 	
 	@Resource(name = "qdao")

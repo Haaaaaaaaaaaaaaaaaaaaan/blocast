@@ -3,12 +3,14 @@ package com.bc.dao;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.bc.dao.mapper.AthumbMapper;
 import com.bc.frame.Dao;
 import com.bc.vo.AnswerThumbsupVO;
 import com.bc.vo.UsersVO;
 
+@Repository("atdao")
 public class AthumbDao implements Dao<AnswerThumbsupVO,String>{
 
 	@Autowired

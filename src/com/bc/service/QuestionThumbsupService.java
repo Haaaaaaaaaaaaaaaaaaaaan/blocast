@@ -9,6 +9,7 @@ import com.bc.frame.Service;
 import com.bc.vo.QuestionThumbsupVO;
 import com.bc.vo.UsersVO;
 
+@org.springframework.stereotype.Service("qtservice")
 public class QuestionThumbsupService implements Service<QuestionThumbsupVO, String>{
 	
 	@Resource(name = "qtdao")

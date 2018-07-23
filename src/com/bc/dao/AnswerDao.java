@@ -3,12 +3,15 @@ package com.bc.dao;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.bc.dao.mapper.AnswerMapper;
 import com.bc.frame.Dao;
 import com.bc.vo.AnswerVO;
 import com.bc.vo.UsersVO;
 
+
+@Repository("adao")
 public class AnswerDao implements Dao<AnswerVO,String>{
 
 	@Autowired

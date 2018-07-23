@@ -3,12 +3,14 @@ package com.bc.dao;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.bc.dao.mapper.FilesMapper;
 import com.bc.frame.Dao;
 import com.bc.vo.FilesVO;
 import com.bc.vo.UsersVO;
 
+@Repository("fdao")
 public class FilesDao implements Dao<FilesVO,String>{
 
 	@Autowired

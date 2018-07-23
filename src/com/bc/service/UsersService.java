@@ -12,7 +12,7 @@ import com.bc.vo.UsersVO;
 
 @org.springframework.stereotype.Service("uservice")
 public class UsersService implements Service<UsersVO, String>, UService<UsersVO, String>{
-	@Resource(name = "dao")
+	@Resource(name = "udao")
 	Dao<UsersVO, String> dao;
 	
 	@Resource(name = "udao")

@@ -9,14 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bc.frame.Service;
+import com.bc.frame.UService;
 import com.bc.vo.UsersVO;
 
 @Controller
 public class MainController {
 
 	@Resource(name="uservice")
-	Service<UsersVO, String> uservice;
+	Service<UsersVO, String> service;
+	@Resource(name="uservice")
+	UService<UsersVO, String> uservice;
 
+	
 	//权
 	@RequestMapping("/main.bc")
 	public String main() {
@@ -71,7 +75,7 @@ public class MainController {
 			UsersVO user = null;
 			
 			try {
-				user = uservice.get(id);
+				user = service.get(id);
 				if(user == null || !(user.getPwd().equals(pwd))) {
 					//null老锭 贸府秦林搁凳
 					mv.setViewName("main");
@@ -121,7 +125,7 @@ public class MainController {
 			HttpSession session = request.getSession();
 			mv.setViewName("main");
 			try {
-				uservice.register(user);	
+				service.register(user);	
 				mv.addObject("centerpage", "center");
 				session.setAttribute("loginid", user.getId());
 				return mv;

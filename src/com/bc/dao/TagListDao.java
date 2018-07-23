@@ -3,6 +3,7 @@ package com.bc.dao;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.bc.dao.mapper.TagListMapper;
 import com.bc.frame.Dao;
@@ -10,6 +11,7 @@ import com.bc.frame.TlDao;
 import com.bc.vo.TagListVO;
 import com.bc.vo.UsersVO;
 
+@Repository("tldao")
 public class TagListDao implements Dao<TagListVO,String>, TlDao<TagListVO,String>{
 
 	@Autowired

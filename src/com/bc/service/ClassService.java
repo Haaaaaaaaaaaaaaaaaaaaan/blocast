@@ -9,6 +9,7 @@ import com.bc.frame.Service;
 import com.bc.vo.ClassVO;
 import com.bc.vo.UsersVO;
 
+@org.springframework.stereotype.Service("cservice")
 public class ClassService implements Service<ClassVO, String>{
 	
 	@Resource(name = "cdao")

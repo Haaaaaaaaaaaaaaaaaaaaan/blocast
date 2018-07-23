@@ -3,6 +3,7 @@ package com.bc.dao;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.bc.dao.mapper.QuestionMapper;
 import com.bc.frame.Dao;
@@ -10,6 +11,7 @@ import com.bc.frame.QDao;
 import com.bc.vo.QuestionVO;
 import com.bc.vo.UsersVO;
 
+@Repository("qdao")
 public class QuestionDao implements Dao<QuestionVO,String>, QDao<QuestionVO,String>{
 
 	@Autowired

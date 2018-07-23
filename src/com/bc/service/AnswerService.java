@@ -9,6 +9,7 @@ import com.bc.frame.Service;
 import com.bc.vo.AnswerVO;
 import com.bc.vo.UsersVO;
 
+@org.springframework.stereotype.Service("aservice")
 public class AnswerService implements Service<AnswerVO, String>{
 	
 	@Resource(name = "adao")

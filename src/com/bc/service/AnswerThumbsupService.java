@@ -9,6 +9,7 @@ import com.bc.frame.Service;
 import com.bc.vo.AnswerThumbsupVO;
 import com.bc.vo.UsersVO;
 
+@org.springframework.stereotype.Service("atservice")
 public class AnswerThumbsupService implements Service<AnswerThumbsupVO, String>{
 	
 	@Resource(name = "atdao")

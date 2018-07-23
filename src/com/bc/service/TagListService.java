@@ -11,9 +11,10 @@ import com.bc.frame.TlService;
 import com.bc.vo.TagListVO;
 import com.bc.vo.UsersVO;
 
+@org.springframework.stereotype.Service("tlservice")
 public class TagListService implements Service<TagListVO,String>, TlService<TagListVO,String>{
 
-	@Resource(name="dao")
+	@Resource(name="tldao")
 	Dao<TagListVO,String> dao;
 	
 	@Resource(name="tldao")

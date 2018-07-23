@@ -3,12 +3,14 @@ package com.bc.dao;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.bc.dao.mapper.FolderMapper;
 import com.bc.frame.Dao;
 import com.bc.vo.FolderVO;
 import com.bc.vo.UsersVO;
 
+@Repository("fddao")
 public class FolderDao implements Dao<FolderVO,String>{
 
 	@Autowired

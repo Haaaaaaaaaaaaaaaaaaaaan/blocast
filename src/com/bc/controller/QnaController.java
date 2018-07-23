@@ -8,7 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bc.frame.QService;
 import com.bc.frame.Service;
+import com.bc.frame.TService;
+import com.bc.frame.TlService;
 import com.bc.vo.QuestionVO;
 import com.bc.vo.TagListVO;
 import com.bc.vo.TagVO;
@@ -17,13 +20,13 @@ import com.bc.vo.TagVO;
 public class QnaController {
 
 	@Resource(name="qservice")
-	Service<QuestionVO, String> qservice;
+	QService<QuestionVO, String> qservice;
 	
 	@Resource(name="tservice")
-	Service<TagVO, String> tservice;
+	TService<TagVO, String> tservice;
 	
 	@Resource(name="tlservice")
-	Service<TagListVO, String> tlservice;
+	TlService<TagListVO, String> tlservice;
 	
 	//±Û¾²±â 
 	@RequestMapping("/write.bc")
