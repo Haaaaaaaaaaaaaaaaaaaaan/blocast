@@ -1,5 +1,8 @@
 package com.bc.controller;
 
+
+import java.util.ArrayList;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -25,6 +28,9 @@ public class QnaController {
 	@Resource(name="tservice")
 	TService<TagVO, String> tservice;
 	
+	@Resource(name="tservice")
+	Service<TagVO, String> service;
+	
 	@Resource(name="tlservice")
 	TlService<TagListVO, String> tlservice;
 	
@@ -40,9 +46,34 @@ public class QnaController {
 		String title=request.getParameter("title");
 		String content = request.getParameter("content");
 		String tag = request.getParameter("tag");
+		ArrayList<String> list1 = new ArrayList<>();
 		
-		//tservice.register(title);
+		//question 테이블에 title과 content 입력
 		
+		
+		System.out.println("tag: " + tag);
+		
+		String [] sp = tag.split(",");
+		
+		for(String t : sp) {
+			list1.add(t);
+		}
+		
+		
+		for(int i =0; i<list1.size(); i++)
+		{
+			System.out.println("list:" + i + ":" + list1.get(i).replaceAll(" ", "").replaceAll("#", ""));
+		}
+		
+		
+		/*
+		try {
+			service.register(tag);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		*/
 		return "qna/write";
 	}
 	
