@@ -42,7 +42,7 @@ public class MainController {
 	public ModelAndView qna() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
-		mv.addObject("centerpage","qna");
+		mv.addObject("centerpage","qna/qmain");
 		return mv;
 	}
 	//about∆‰¿Ã¡ˆ
