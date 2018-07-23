@@ -39,7 +39,7 @@
 				<ul class="navbar-nav ml-auto row">
 					<li class="nav-item col-md-3 col-lg-2 col-sm-2"><a class="nav-link" href="main.bc">Home</a>
 					</li>
-					<li class="nav-item col-md-3 col-lg-2 col-sm-2"><a class="nav-link" href="codelist.bc">Code</a>
+					<li class="nav-item col-md-3 col-lg-2 col-sm-2"><a class="nav-link" href="codemain.bc">Code</a>
 					</li>
 					<li class="nav-item col-md-3 col-lg-2 col-sm-2"><a class="nav-link" href="qna.bc">QnA</a>
 					</li>

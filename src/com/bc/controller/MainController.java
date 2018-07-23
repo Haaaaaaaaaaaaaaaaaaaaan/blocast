@@ -29,11 +29,11 @@ public class MainController {
 	}
 	
 	//과목보기
-	@RequestMapping("/codelist.bc")
+	@RequestMapping("/codemain.bc")
 	public ModelAndView codelist() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
-		mv.addObject("centerpage","codelist");
+		mv.addObject("centerpage","code/codemain");
 		return mv;
 	}
 	
