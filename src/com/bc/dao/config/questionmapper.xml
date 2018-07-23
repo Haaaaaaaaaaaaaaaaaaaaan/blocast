@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM QUESTION where CLASS_ID=#{obj}
 	</select>
 	<insert id="insert" parameterType="question">
-		INSERT INTO QUESTION VALUES (QUESTION_ID_SEQ,#{title},#{author},#{thumbsup},SYSDATE,#{contents},#{class_id},#{state, jdbcType=VARCHAR},#{imgname1, jdbcType=VARCHAR},#{imgname2, jdbcType=VARCHAR},#{imgname3, jdbcType=VARCHAR})
+		INSERT INTO QUESTION VALUES (QUESTION_ID_SEQ.NEXTVAL,#{title},#{author},#{thumbsup},SYSDATE,#{contents},#{class_id},#{state, jdbcType=VARCHAR},#{imgname1, jdbcType=VARCHAR},#{imgname2, jdbcType=VARCHAR},#{imgname3, jdbcType=VARCHAR})
 	</insert>
 	<update id="update" parameterType="question">
 		UPDATE QUESTION SET TITLE=#{title},AUTHOR=#{author},THUMBSUP=#{thumbsup},CONTENTS=#{contents},CLASS_ID=#{class_id},STATE=#{state},IMGNAME1=#{imgname1},IMGNAME2=#{imgname2},IMGNAME3=#{imgname3} WHERE ID=#{id}

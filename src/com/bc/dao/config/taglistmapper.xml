@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM TAGLIST where TAG_ID = #{obj}
 	</select>
 	<insert id="insert" parameterType="taglist">
-		INSERT INTO TAGLIST VALUES (TAGLIST_ID_SEQ,#{question_id},#{tag_id})
+		INSERT INTO TAGLIST VALUES (TAGLIST_ID_SEQ.NEXTVAL,#{question_id},#{tag_id})
 	</insert>
 	<update id="update" parameterType="taglist">
 		UPDATE TAGLIST SET QUESTION_ID=#{question_id},TAG_ID=#{tag_id} WHERE ID=#{id}

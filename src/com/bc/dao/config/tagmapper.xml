@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT NAME FROM TAG where NAME like '%' ||  #{obj} || '%'
 	</select>
 	<insert id="insert" parameterType="String">
-		INSERT INTO TAG VALUES (TAG_ID_SEQ,#{name})
+		INSERT INTO TAG VALUES (TAG_ID_SEQ.NEXTVAL,#{name})
 	</insert>
 	<update id="update" parameterType="tag">
 		UPDATE TAG SET NAME=#{name} WHERE ID=#{id}

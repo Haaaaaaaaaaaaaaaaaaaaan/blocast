@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM CLASS
 	</select>
 	<insert id="insert" parameterType="class">
-		INSERT INTO CLASS VALUES (CLASS_ID_SEQ,#{name},SYSDATE)
+		INSERT INTO CLASS VALUES (CLASS_ID_SEQ.NEXTVAL,#{name},SYSDATE)
 	</insert>
 	<update id="update" parameterType="class">
 		UPDATE CLASS SET NAME=#{name} WHERE ID=#{id}
