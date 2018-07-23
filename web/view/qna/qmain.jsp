@@ -46,16 +46,19 @@
 	</h1>
 
 	<ol class="breadcrumb">
-		<div class="col-lg-6">
+		<div class="col-lg-8">
 			<div class="input-group">
 				<input type="text" class="form-control" placeholder="Search for...">
 				<span class="input-group-btn">
 					<button onclick="search();" class="btn btn-default" type="button">검색하기</button>
 				</span>
 			</div>
-			<!-- /input-group -->
 		</div>
-		<!-- /.col-lg-6 -->
+		<div class="col-lg-3">
+			<div class="input-group">
+					<button class="btn btn-default" type="button"><a href="write.bc">질문하기</a></button>
+			</div>
+		</div>
 	</ol>
 
 	<!-- Content Row -->
@@ -68,22 +71,14 @@
 				<button class="list-group-item cname" name="3">IOT</button>
 			</div>
 		</div>
-		<!-- Content Column -->
+		
 		<div class="col-lg-9 mb-4" id="qnas"></div>
 	</div>
-	<!-- /.row -->
+	
 
 </div>
-<!-- /.container -->
 
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-	<div class="container">
-		<p class="m-0 text-center text-white">Copyright &copy; Your
-			Website 2018</p>
-	</div>
-	<!-- /.container -->
-</footer>
+
 
 <!-- Bootstrap core JavaScript -->
 
