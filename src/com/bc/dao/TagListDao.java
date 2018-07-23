@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.bc.dao.mapper.TagListMapper;
 import com.bc.frame.Dao;
+import com.bc.frame.TlDao;
 import com.bc.vo.TagListVO;
 import com.bc.vo.UsersVO;
 
-public class TagListDao implements Dao<TagListVO,String>{
+public class TagListDao implements Dao<TagListVO,String>, TlDao<TagListVO,String>{
 
 	@Autowired
 	TagListMapper mapper;
@@ -40,24 +41,6 @@ public class TagListDao implements Dao<TagListVO,String>{
 	}
 
 	@Override
-	public UsersVO selectSearch(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void insertUser(String v, TagListVO t) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public ArrayList<TagListVO> selectname(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public ArrayList<TagListVO> selectqid(String obj) {
 		// TODO Auto-generated method stub
 		return mapper.selectqid(obj);
@@ -70,15 +53,9 @@ public class TagListDao implements Dao<TagListVO,String>{
 	}
 
 	@Override
-	public ArrayList<TagListVO> selectnamecont(String obj) throws Exception {
+	public void insert(String obj) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<TagListVO> selectauthor(String obj) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		
 	}
 	
 }

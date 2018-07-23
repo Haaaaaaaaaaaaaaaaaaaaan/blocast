@@ -48,44 +48,10 @@ public class AnswerThumbsupService implements Service<AnswerThumbsupVO, String>{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
-	public void registerUser(String v, AnswerThumbsupVO t) throws Exception {
+	public void register(String v) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public ArrayList<AnswerThumbsupVO> getName(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<AnswerThumbsupVO> getQid(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<AnswerThumbsupVO> getTid(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<AnswerThumbsupVO> getNameCont(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<AnswerThumbsupVO> getAuthor(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	
-	
 }

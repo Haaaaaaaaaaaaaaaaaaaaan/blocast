@@ -39,46 +39,11 @@ public class ClassDao implements Dao<ClassVO,String>{
 		return mapper.selectall();
 	}
 
+	
 	@Override
-	public UsersVO selectSearch(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void insertUser(String v, ClassVO t) throws Exception {
+	public void insert(String obj) throws Exception {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public ArrayList<ClassVO> selectname(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<ClassVO> selectqid(String obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<ClassVO> selecttid(String obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<ClassVO> selectnamecont(String obj) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<ClassVO> selectauthor(String obj) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

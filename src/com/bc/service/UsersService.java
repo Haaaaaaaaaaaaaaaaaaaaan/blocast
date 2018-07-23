@@ -6,16 +6,21 @@ import javax.annotation.Resource;
 
 import com.bc.frame.Dao;
 import com.bc.frame.Service;
+import com.bc.frame.UDao;
+import com.bc.frame.UService;
 import com.bc.vo.UsersVO;
 
 @org.springframework.stereotype.Service("uservice")
-public class UsersService implements Service<UsersVO, String>{
+public class UsersService implements Service<UsersVO, String>, UService<UsersVO, String>{
+	@Resource(name = "dao")
+	Dao<UsersVO, String> dao;
+	
 	@Resource(name = "udao")
-	Dao<UsersVO, String> udao;
+	UDao<UsersVO, String> udao;
 
 	@Override
 	public void register(UsersVO t) throws Exception {
-		udao.insert(t);
+		dao.insert(t);
 	}
 	@Override
 	public void registerUser(String v, UsersVO t) throws Exception {
@@ -25,18 +30,18 @@ public class UsersService implements Service<UsersVO, String>{
 	@Override
 	public void modify(UsersVO t) throws Exception {
 		// TODO Auto-generated method stub
-		udao.update(t);
+		dao.update(t);
 	}
 
 	@Override
 	public void remove(String v) throws Exception {
 		// TODO Auto-generated method stub
-		udao.delete(v);
+		dao.delete(v);
 	}
 
 	@Override
 	public UsersVO get(String v) throws Exception {
-		return udao.select(v);
+		return dao.select(v);
 	}
 	
 	@Override
@@ -49,34 +54,12 @@ public class UsersService implements Service<UsersVO, String>{
 	@Override
 	public ArrayList<UsersVO> get() throws Exception {
 		// TODO Auto-generated method stub
-		return udao.selectall();
+		return dao.selectall();
 	}
 	@Override
-	public ArrayList<UsersVO> getName(String v) throws Exception {
+	public void register(String v) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
-	@Override
-	public ArrayList<UsersVO> getQid(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public ArrayList<UsersVO> getTid(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public ArrayList<UsersVO> getNameCont(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public ArrayList<UsersVO> getAuthor(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
 	
 }

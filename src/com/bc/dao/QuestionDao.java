@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.bc.dao.mapper.QuestionMapper;
 import com.bc.frame.Dao;
+import com.bc.frame.QDao;
 import com.bc.vo.QuestionVO;
 import com.bc.vo.UsersVO;
 
-public class QuestionDao implements Dao<QuestionVO,String>{
+public class QuestionDao implements Dao<QuestionVO,String>, QDao<QuestionVO,String>{
 
 	@Autowired
 	QuestionMapper mapper;
@@ -40,36 +41,6 @@ public class QuestionDao implements Dao<QuestionVO,String>{
 	}
 
 	@Override
-	public UsersVO selectSearch(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void insertUser(String v, QuestionVO t) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public ArrayList<QuestionVO> selectname(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<QuestionVO> selectqid(String obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<QuestionVO> selecttid(String obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public ArrayList<QuestionVO> selectnamecont(String obj) throws Exception {
 		// TODO Auto-generated method stub
 		return mapper.selectnamecont(obj);
@@ -79,6 +50,12 @@ public class QuestionDao implements Dao<QuestionVO,String>{
 	public ArrayList<QuestionVO> selectauthor(String obj) throws Exception {
 		// TODO Auto-generated method stub
 		return mapper.selectauthor(obj);
+	}
+
+	@Override
+	public void insert(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

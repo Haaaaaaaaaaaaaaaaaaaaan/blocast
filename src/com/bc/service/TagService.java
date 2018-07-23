@@ -6,36 +6,42 @@ import javax.annotation.Resource;
 
 import com.bc.frame.Dao;
 import com.bc.frame.Service;
+import com.bc.frame.TDao;
+import com.bc.frame.TService;
 import com.bc.vo.TagVO;
 import com.bc.vo.UsersVO;
 
-public class TagService implements Service<TagVO,String>{
+public class TagService implements Service<TagVO,String>, TService<TagVO,String>{
 
+	@Resource(name="dao")
+	Dao<TagVO,String> dao;
+	
 	@Resource(name="tdao")
-	Dao<TagVO,String> tdao;
+	TDao<TagVO,String> tdao;
+	
 	@Override
-	public void register(TagVO t) throws Exception {
-		tdao.insert(t);
+	public void register(String v) throws Exception {
+		dao.insert(v);
 	}
 
 	@Override
 	public void modify(TagVO t) throws Exception {
-		tdao.update(t);
+		dao.update(t);
 	}
 
 	@Override
 	public void remove(String v) throws Exception {
-		tdao.delete(v);
+		dao.delete(v);
 	}
 
 	@Override
 	public TagVO get(String v) throws Exception {
-		return tdao.select(v);
+		return dao.select(v);
 	}
 
 	@Override
 	public ArrayList<TagVO> get() throws Exception {
-		return tdao.selectall();
+		return dao.selectall();
 	}
 
 	@Override
@@ -44,11 +50,6 @@ public class TagService implements Service<TagVO,String>{
 		return null;
 	}
 
-	@Override
-	public void registerUser(String v, TagVO t) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public ArrayList<TagVO> getName(String v) throws Exception {
@@ -57,27 +58,9 @@ public class TagService implements Service<TagVO,String>{
 	}
 
 	@Override
-	public ArrayList<TagVO> getQid(String v) throws Exception {
+	public void register(TagVO t) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<TagVO> getTid(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<TagVO> getNameCont(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<TagVO> getAuthor(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
 }

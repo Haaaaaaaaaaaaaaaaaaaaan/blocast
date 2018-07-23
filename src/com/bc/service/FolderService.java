@@ -51,42 +51,10 @@ public class FolderService implements Service<FolderVO, String>{
 	}
 
 	@Override
-	public void registerUser(String v, FolderVO t) throws Exception {
+	public void register(String v) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public ArrayList<FolderVO> getName(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<FolderVO> getQid(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<FolderVO> getTid(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<FolderVO> getNameCont(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<FolderVO> getAuthor(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
 	
 	
 }

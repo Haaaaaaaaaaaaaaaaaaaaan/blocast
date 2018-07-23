@@ -49,44 +49,10 @@ public class FilesService implements Service<FilesVO, String>{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 	@Override
-	public void registerUser(String v, FilesVO t) throws Exception {
+	public void register(String v) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public ArrayList<FilesVO> getName(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<FilesVO> getQid(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<FilesVO> getTid(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<FilesVO> getNameCont(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<FilesVO> getAuthor(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	
 	
 }

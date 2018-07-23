@@ -7,10 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.bc.dao.mapper.UserMapper;
 import com.bc.frame.Dao;
+import com.bc.frame.UDao;
 import com.bc.vo.UsersVO;
 
 @Repository("udao")
-public class UsersDao implements Dao<UsersVO,String>{
+public class UsersDao implements Dao<UsersVO,String>, UDao<UsersVO,String >{
 
 	@Autowired
 	UserMapper mapper;
@@ -50,35 +51,11 @@ public class UsersDao implements Dao<UsersVO,String>{
 		mapper.insertUser(v,t);
 		
 	}
-
+	
 	@Override
-	public ArrayList<UsersVO> selectname(String v) throws Exception {
+	public void insert(String obj) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<UsersVO> selectqid(String obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<UsersVO> selecttid(String obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<UsersVO> selectnamecont(String obj) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<UsersVO> selectauthor(String obj) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
 }

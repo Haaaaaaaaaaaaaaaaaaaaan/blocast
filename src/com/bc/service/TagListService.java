@@ -6,37 +6,42 @@ import javax.annotation.Resource;
 
 import com.bc.frame.Dao;
 import com.bc.frame.Service;
+import com.bc.frame.TlDao;
+import com.bc.frame.TlService;
 import com.bc.vo.TagListVO;
 import com.bc.vo.UsersVO;
 
-public class TagListService implements Service<TagListVO,String>{
+public class TagListService implements Service<TagListVO,String>, TlService<TagListVO,String>{
 
+	@Resource(name="dao")
+	Dao<TagListVO,String> dao;
+	
 	@Resource(name="tldao")
-	Dao<TagListVO,String> tldao;
+	TlDao<TagListVO,String> tldao;
 	
 	@Override
 	public void register(TagListVO t) throws Exception {
-		tldao.insert(t);
+		dao.insert(t);
 	}
 
 	@Override
 	public void modify(TagListVO t) throws Exception {
-		tldao.update(t);
+		dao.update(t);
 	}
 
 	@Override
 	public void remove(String v) throws Exception {
-		tldao.delete(v);
+		dao.delete(v);
 	}
 
 	@Override
 	public TagListVO get(String v) throws Exception {
-		return tldao.select(v);
+		return dao.select(v);
 	}
 
 	@Override
 	public ArrayList<TagListVO> get() throws Exception {
-		return tldao.selectall();
+		return dao.selectall();
 	}
 
 	@Override
@@ -45,17 +50,6 @@ public class TagListService implements Service<TagListVO,String>{
 		return null;
 	}
 
-	@Override
-	public void registerUser(String v, TagListVO t) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public ArrayList<TagListVO> getName(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public ArrayList<TagListVO> getQid(String v) throws Exception {
@@ -70,15 +64,9 @@ public class TagListService implements Service<TagListVO,String>{
 	}
 
 	@Override
-	public ArrayList<TagListVO> getNameCont(String v) throws Exception {
+	public void register(String v) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<TagListVO> getAuthor(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
 }

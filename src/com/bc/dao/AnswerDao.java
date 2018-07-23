@@ -40,45 +40,11 @@ public class AnswerDao implements Dao<AnswerVO,String>{
 	}
 
 	@Override
-	public UsersVO selectSearch(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void insertUser(String v, AnswerVO t) throws Exception {
+	public void insert(String obj) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public ArrayList<AnswerVO> selectname(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<AnswerVO> selectqid(String obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<AnswerVO> selecttid(String obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<AnswerVO> selectnamecont(String obj) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<AnswerVO> selectauthor(String obj) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

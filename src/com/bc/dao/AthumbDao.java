@@ -40,45 +40,10 @@ public class AthumbDao implements Dao<AnswerThumbsupVO,String>{
 	}
 
 	@Override
-	public UsersVO selectSearch(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void insertUser(String v, AnswerThumbsupVO t) throws Exception {
+	public void insert(String obj) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public ArrayList<AnswerThumbsupVO> selectname(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<AnswerThumbsupVO> selectqid(String obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<AnswerThumbsupVO> selecttid(String obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<AnswerThumbsupVO> selectnamecont(String obj) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<AnswerThumbsupVO> selectauthor(String obj) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 }

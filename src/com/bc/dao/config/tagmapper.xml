@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="selectname" parameterType="String" resultType="tag">
 		SELECT NAME FROM TAG where NAME like '%' ||  #{obj} || '%'
 	</select>
-	<insert id="insert" parameterType="tag">
+	<insert id="insert" parameterType="String">
 		INSERT INTO TAG VALUES (TAG_ID_SEQ,#{name})
 	</insert>
 	<update id="update" parameterType="tag">
