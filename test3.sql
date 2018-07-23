@@ -8,4 +8,4 @@ select seq_class.NEXTVAL FROM DUAL
 
 INSERT INTO CLASS values(seq_class.NEXTVAL,'name',sysdate);
 
-select * from class
+select * from USERS

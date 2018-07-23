@@ -53,8 +53,8 @@
 					</li>
 				</c:when>
 				<c:otherwise>	
-					<li class="col-md-3 col-lg-2 col-sm-2"><a href="logout.bc">LOGOUT</a></li>
-					<li class="col-md-3 col-lg-2 col-sm-2" style="color:white;">${loginid } ดิ </li>
+					<li class="nav-item col-md-3 col-lg-2 col-sm-2"><a class="nav-link" href="logout.bc">LOGOUT</a></li>
+					<li class="nav-item col-md-3 col-lg-2 col-sm-2"><a class="nav-link">${loginid } </a></li>
 				</c:otherwise>
 			</c:choose>
 				</ul>
