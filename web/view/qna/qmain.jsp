@@ -8,7 +8,9 @@
 			var result = '';
 			$(data).each(function(index) {
 				console.log($(this).attr('title'));
+				result+='<h3>'+$(this).attr('title')+'</h3>';
 			});
+			$('.qnas').html(result);
 		}
 
 		$('.cname').click(function() {
@@ -24,7 +26,7 @@
 					display(data);
 				},
 				error : function() {
-					alert("error");
+					alert("data를 가져오지 못했어요");
 				}
 			});
 
@@ -44,22 +46,25 @@
 	<h1 class="mt-4 mb-3">
 		QnA <small>Ask Anything!</small>
 	</h1>
+	
 
-	<ol class="breadcrumb">
-		<div class="col-lg-8">
-			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Search for...">
-				<span class="input-group-btn">
-					<button onclick="search();" class="btn btn-default" type="button">검색하기</button>
-				</span>
+		<div class="row float-right">
+			<div class="col-md-9">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Search for...">
+					<span class="input-group-btn">
+						<button onclick="search();" class="btn btn-default" type="button">검색하기</button>
+					</span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="input-group">
+						<button class="btn btn-default" type="button"><a href="write.bc">질문하기</a></button>
+				</div>
 			</div>
 		</div>
-		<div class="col-lg-3">
-			<div class="input-group">
-					<button class="btn btn-default" type="button"><a href="write.bc">질문하기</a></button>
-			</div>
-		</div>
-	</ol>
+
+	
 
 	<!-- Content Row -->
 	<div class="row">
@@ -72,7 +77,7 @@
 			</div>
 		</div>
 		
-		<div class="col-lg-9 mb-4" id="qnas"></div>
+		<div class="col-lg-9 mb-4 qnas" ></div>
 	</div>
 	
 

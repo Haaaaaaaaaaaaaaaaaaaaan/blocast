@@ -3,14 +3,19 @@ package com.bc.controller;
 
 import static org.hamcrest.CoreMatchers.nullValue;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bc.frame.QService;
@@ -133,13 +138,29 @@ public class QnaController {
 		return mv;
 	}
 	
-	/*
-	 * //글쓰고 나서
-	@RequestMapping("/writeimpl.bc")
-	public ModelAndView writeimpl() {
-		ModelAndView mv = new ModelAndView();
-		return "qna/write";
+	@RequestMapping("/qnalist.bc")
+	public void qnalist(@RequestParam(value = "classid") String cid, HttpServletResponse response)
+			throws Exception {
+		
+		response.setContentType("text/json;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		JSONArray ja = new JSONArray();
+		ArrayList<QuestionVO> qlist = null;
+		
+		qlist = qservice.getClassid(cid);
+
+		for (QuestionVO q : qlist) {
+			JSONObject jo = new JSONObject();
+			jo.put("id", q.getId());
+			jo.put("title", q.getTitle());
+			jo.put("author", q.getAuthor());
+			jo.put("regdate", q.getRegdate());
+			ja.add(jo);
+			
+		}
+		
+		out.println(ja.toJSONString());
+
+		out.close();
 	}
-	 * 
-	 */
 }
