@@ -36,8 +36,8 @@ public class UsersDao implements Dao<UsersVO,String>, UDao<UsersVO,String >{
 		return mapper.select(v);
 	}
 	@Override
-	public UsersVO selectSearch(String v) throws Exception {
-		return mapper.selectSearch(v);
+	public UsersVO selectSearch(UsersVO t) throws Exception {
+		return mapper.selectSearch(t);
 	}
 
 	@Override

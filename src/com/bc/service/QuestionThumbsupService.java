@@ -44,13 +44,6 @@ public class QuestionThumbsupService implements Service<QuestionThumbsupVO, Stri
 		// TODO Auto-generated method stub
 		return qtdao.selectall();
 	}
-
-	@Override
-	public UsersVO getSearch(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	@Override
 	public void register(String v) throws Exception {
 		// TODO Auto-generated method stub

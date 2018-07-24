@@ -1,23 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
-
-<script>
-
-var resultt = "<%=(String)request.getAttribute("resultt")%>"
-
-if(resultt != 'null') {
-	if(resultt == 'asdf') {
-		alert("id 혹은 password가 틀렸습니다. 다시 입력하세요.");
-	}
-}
-</script>
-
-<style>
+ 
+ <style>
 .pass_show{position: relative} 
 
 .pass_show .ptxt { 
@@ -56,30 +44,23 @@ $(this).text($(this).text() == "Show" ? "Hide" : "Show");
 $(this).prev().attr('type', function(index, attr){return attr == 'password' ? 'text' : 'password'; }); 
 
 });  
+</script>   
+
+<script>
+
+var resultt = "<%=(String)request.getAttribute("resultt")%>"
+
+if(resultt != 'null') {
+	if(resultt == 'asdf') {
+		alert("id 혹은  email이 틀렸습니다. 다시 입력하세요.");
+	}
+	if(resultt == 'asdd') {
+		alert("id와  pwd가 email로 보내졌습니다. 확인하세요.");
+	}
+}
 </script>
 
- <script type="text/javascript">
-    
-        var openWin;
-    
-        function openChild()
-        {
-            // window.name = "부모창 이름"; 
-            window.name = "parentForm";
-            // window.open("open할 window", "자식창 이름", "팝업창 옵션");
-            openWin = window.open("email.bc",
-                    "childForm", "width=570, height=350, resizable = no, scrollbars = no");
-        }
-        
-        function setChildText(){
-            openWin.document.getElementById("cInput").value = document.getElementById("pInput").value;
-        }
- 
-   </script>
-
-
-
-<form action="loginimpl.bc" method="POST">
+<form action="emailimpl.bc" method="POST">
 <div class="container">
 	<br>
 	<div class="row">
@@ -87,7 +68,7 @@ $(this).prev().attr('type', function(index, attr){return attr == 'password' ? 't
 		
 		</div>
 		<div class="col-sm-10 col-md-10 col-lg-6">
-		<h1 style="font-family: 'Alex Brush', cursive;">Login Page</h1>
+		<h1 style="font-family: 'Alex Brush', cursive;">Email Page</h1>
 		</div>
 		
 		<div class="col-sm-1 col-md-1 col-lg-3">
@@ -100,27 +81,21 @@ $(this).prev().attr('type', function(index, attr){return attr == 'password' ? 't
 		
 		</div>
 		<div class="col-sm-10 col-md-10 col-lg-6">
-			<label>ID</label>
+			<label>NAME</label>
 			<div class="form-group pass_show"> 
-				<input type="text" class="form-control" placeholder="Insert id" name="id">
+				<input type="text" class="form-control" placeholder="Insert name" name="names">
 			</div>
 			
-			<label>PWD</label>
+			<label>EMAIL</label>
 			<div class="form-group pass_show"> 
-				<input type="password" class="form-control" placeholder="Insert password" name="pwd">
+				<input type="text" class="form-control" placeholder="Insert email" name="email">
 			</div>
 			
 			<div>
-				<input  class="form-control" type="submit" value="LOGIN">
+				<input  class="form-control" type="submit" value="CONFIRM">
 			</div>
 			<br>
-			<div>
-			<input class="form-control" type="button" value="아이디와 비밀번호를 잊어버리셨나요?" onclick="openChild()"><br>
-			</div>
-			<br>
-			
 		</div>
-		
 		<div class="col-sm-1 col-md-1 col-lg-3">
 		
 		</div>

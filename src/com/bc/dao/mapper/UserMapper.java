@@ -13,6 +13,6 @@ public interface UserMapper {
 	public void delete(String obj);
 	public void update(UsersVO obj);
 	public UsersVO select(String obj);
-	public UsersVO selectSearch(String obj);
+	public UsersVO selectSearch(UsersVO obj);
 	public ArrayList<UsersVO> selectall();
 }

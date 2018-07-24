@@ -68,12 +68,6 @@ public class QuestionService implements Service<QuestionVO, String>, QService<Qu
 	}
 	
 	@Override
-	public UsersVO getSearch(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public ArrayList<QuestionVO> getClassid(String v) throws Exception {
 		return qdao.selectclass(v);
 	}

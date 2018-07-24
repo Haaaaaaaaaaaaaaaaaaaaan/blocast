@@ -11,5 +11,4 @@ public interface Service<T,V> {
 	public void remove(V v) throws Exception;
 	public T get(V v) throws Exception;
 	public ArrayList<T> get() throws Exception;
-	public UsersVO getSearch(String v) throws Exception;
  }

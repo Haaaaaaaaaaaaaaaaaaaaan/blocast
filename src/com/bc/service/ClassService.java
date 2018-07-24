@@ -43,12 +43,6 @@ public class ClassService implements Service<ClassVO, String>{
 		// TODO Auto-generated method stub
 		return cdao.selectall();
 	}
-
-	@Override
-	public UsersVO getSearch(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	@Override
 	public void register(String v) throws Exception {

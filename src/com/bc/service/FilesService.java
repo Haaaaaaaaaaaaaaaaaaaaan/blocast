@@ -44,12 +44,7 @@ public class FilesService implements Service<FilesVO, String>{
 		// TODO Auto-generated method stub
 		return fdao.selectall();
 	}
-
-	@Override
-	public UsersVO getSearch(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	@Override
 	public void register(String v) throws Exception {
 		// TODO Auto-generated method stub

@@ -46,13 +46,6 @@ public class TagListService implements Service<TagListVO,String>, TlService<TagL
 	}
 
 	@Override
-	public UsersVO getSearch(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
 	public ArrayList<TagListVO> getQid(String v) throws Exception {
 		// TODO Auto-generated method stub
 		return tldao.selectqid(v);

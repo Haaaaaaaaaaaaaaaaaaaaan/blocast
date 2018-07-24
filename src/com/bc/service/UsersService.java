@@ -45,9 +45,9 @@ public class UsersService implements Service<UsersVO, String>, UService<UsersVO,
 	}
 	
 	@Override
-	public UsersVO getSearch(String v) throws Exception {
+	public UsersVO getSearch(UsersVO t) throws Exception {
 		// TODO Auto-generated method stub
-		return udao.selectSearch(v);
+		return udao.selectSearch(t);
 	}
 	
 
@@ -61,5 +61,4 @@ public class UsersService implements Service<UsersVO, String>, UService<UsersVO,
 		// TODO Auto-generated method stub
 		
 	}
-	
 }

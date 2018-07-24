@@ -45,11 +45,6 @@ public class TagService implements Service<TagVO,String>, TService<TagVO,String>
 		return dao.selectall();
 	}
 
-	@Override
-	public UsersVO getSearch(String v) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
 	@Override

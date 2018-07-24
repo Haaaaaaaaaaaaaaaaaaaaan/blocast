@@ -43,14 +43,7 @@ public class AnswerService implements Service<AnswerVO, String>{
 		// TODO Auto-generated method stub
 		return adao.selectall();
 	}
-
-	@Override
-	public UsersVO getSearch(String v) throws Exception {
-		return null;
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	@Override
 	public void register(String v) throws Exception {
 		// TODO Auto-generated method stub
