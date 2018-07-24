@@ -129,14 +129,34 @@ public class QnaController {
 		
 		ArrayList<TagVO> tali1 = new ArrayList<TagVO>();
 		
-		for(int i =0; i<list1.size(); i++)
+		a:for(int i =0; i<list1.size(); i++)
 		{
 //			System.out.println("list:" + i + ":" + list1.get(i).replaceAll(" ", "").replaceAll("#", ""));
 
 			
 			try {
-				service.register(list1.get(i).replaceAll(" ", "").replaceAll("#", ""));
+				ArrayList<TagVO> tags = service.get();
+				boolean flag = false;
+				String input = list1.get(i).replaceAll(" ", "").replaceAll("#", "");
+				for(int j =0; j<tags.size(); j++)
+				{
+					TagVO tag2 = tags.get(j);
+					
+					//같은 name의 tag가 있으면 flag가 true
+					if(tag2.getName().equals(input))
+					{
+						flag=true;
+					}
+					
+					if(flag==true) {
+						continue a;
+					}
+				}
+				
+				service.register(input);
+				System.out.println("input :"+input+" is inserted!" );
 				tali1.add(tservice.getRecent());
+				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
