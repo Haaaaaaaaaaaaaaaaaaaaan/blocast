@@ -1,11 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
    
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
 
+<script>
+$(document).ready(function(){
+});
+</script>
 <form action="writeimpl.bc" method="POST">
 <div class="container">
 	<br>
@@ -27,6 +32,14 @@
 		
 		</div>
 		<div class="col-sm-10 col-md-10 col-lg-6">
+			<div class="form-group"> 
+				<select name="classI">
+					<c:forEach var="c" items="${classInfo}">
+						<option>${c.name}</option>
+					</c:forEach>
+				</select>
+			</div>
+		
 			<label>Title</label>
 			<div class="form-group"> 
 				<input type="text" class="form-control" placeholder="Insert title" name="title">
