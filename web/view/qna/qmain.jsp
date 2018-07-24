@@ -9,19 +9,7 @@
 </style>
 <script>
 	$(document).ready(function() {
-		function getTag(id){
-			$.ajax({
-				url : 'taglist.bc',
-				data : id,
-				success : function(data) {
-					return data;
-				},
-				error : function(request,status,error){
-			        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-			    }
-			
-			});
-		}
+		
 		
 		$('.search').click(function(e){
 			e.preventDefault();
@@ -40,8 +28,9 @@
 		
 		function display(data) {
 			var result = '';
+			
 			$(data).each(function(index) {
-				result+='<div class="card mb-1 hoverable">';
+				result+='<div id="'+$(this).attr('id')+'"class="card mb-1 hoverable">';
 				result+='<div class="card-header" role="tab" data-toggle="collapse" data-parent="#accordion" href="#c'+index+'" aria-expanded="true" aria-controls="collapseOne">';
 				result+='<h5 class="card-title">';
 				result+=$(this).attr('title');
@@ -49,20 +38,8 @@
 				result+='</div>';//card-header
 				
 				result+='<div id="c'+index+'" class="collapse" role="tabpanel">';
-				result+='<div class="card-body">';
-				result+='<h5 class="text-mute"> 태그목록:'
-				var tags = [];
-				tags = getTag($(this).attr('id'));
 				
-				$(tags).each(function(idx){
-					result+='#'+this+' ';
-				});
-				result+='</h5>'
-				result+='<p>';
-				result+=$(this).attr('contents');
-				result+='</p>';
 				
-				result+='</div>';//card-body
 				result+='</div>';//collapse
 				result+='<div class="card-footer text-muted">작성자 : ';
 				result+=$(this).attr('author');
@@ -74,6 +51,25 @@
 			    
 			});
 			$('.qnas').html(result);
+			
+			$('.card').click(function(){
+				var qid = $(this).attr('id');
+				var id = {
+						"qid" : qid
+					};
+				$.ajax({
+					url : 'tlist.bc',
+					data : id,
+					success : function(data) {
+						alert(data);
+					},
+					error : function(request,status,error){
+				        alert("getTag AJAX 에러에요!\n"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+				    },
+				    dataType: 'json'
+				
+				});
+			});
 		}
 
 		$('.cname').click(function() {

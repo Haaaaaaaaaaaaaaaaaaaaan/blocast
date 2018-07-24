@@ -213,6 +213,25 @@ public class QnaController {
 		out.close();
 	}
 	
+	// get tag list where question_id is given
+	@RequestMapping("/tlist.bc")
+	@ResponseBody
+	public void taglist(@RequestParam(value = "qid") String qid, HttpServletResponse response) throws Exception {
+		response.setContentType("text/json;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		JSONArray ja = new JSONArray();
+		ArrayList<TagListVO> tlist = null;
+
+		tlist = tlservice.getTid(qid);
+		for (TagListVO t : tlist) {
+			ja.add(service.get(t.getTag_id()).getName());
+		}
+
+		out.println(ja.toJSONString());
+
+		out.close();
+	}
+	
 	@RequestMapping("/qsearch.bc")
 	public ModelAndView qsearch(HttpServletRequest request) {
 		String keyword = request.getParameter("keyword");
