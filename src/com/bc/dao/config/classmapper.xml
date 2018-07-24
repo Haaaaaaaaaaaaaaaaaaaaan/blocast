@@ -11,6 +11,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="selectall" resultType="class">
 		SELECT * FROM CLASS
 	</select>
+	
+	<select id="selectname" parameterType="String" resultType="class">
+		SELECT * FROM CLASS WHERE NAME = #{obj}
+	</select>
 	<insert id="insert" parameterType="class">
 		INSERT INTO CLASS VALUES (CLASS_ID_SEQ.NEXTVAL,#{name},SYSDATE)
 	</insert>

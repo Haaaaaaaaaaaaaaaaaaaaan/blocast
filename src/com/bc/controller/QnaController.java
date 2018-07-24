@@ -16,12 +16,15 @@ import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bc.frame.CService;
 import com.bc.frame.QService;
 import com.bc.frame.Service;
 import com.bc.frame.TService;
 import com.bc.frame.TlService;
+import com.bc.vo.ClassVO;
 import com.bc.vo.QuestionVO;
 import com.bc.vo.TagListVO;
 import com.bc.vo.TagVO;
@@ -34,6 +37,12 @@ public class QnaController {
 	
 	@Resource(name="qservice")
 	Service<QuestionVO, String> qservice2;
+	
+	@Resource(name="cservice")
+	Service<QuestionVO, String> cservice;
+	
+	@Resource(name="cservice")
+	CService<QuestionVO, String> cservice2;
 	
 	@Resource(name="tservice")
 	TService<TagVO, String> tservice;
@@ -53,6 +62,13 @@ public class QnaController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
 		mv.addObject("centerpage","qna/write");
+		try {
+			System.out.println("cservice.get() :" + cservice.get());
+			mv.addObject("classInfo",cservice.get());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return mv;
 	}
 		
@@ -62,15 +78,24 @@ public class QnaController {
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
 		mv.setViewName("main");
+		String classI=request.getParameter("classI");	
+		ClassVO cvo =null;
+		try {
+		    cvo = cservice2.getname(classI);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		String title=request.getParameter("title");
 		String content = request.getParameter("content");
 		String tag = request.getParameter("tag");
 		ArrayList<String> list1 = new ArrayList<>();
+		System.out.println("classI:" + classI);
 		
 		QuestionVO q = new QuestionVO();
 		q.setTitle(title);
 		q.setContents(content);
-		q.setClass_id("1");
+		q.setClass_id(cvo.getId());
 		q.setAuthor(session.getAttribute("loginid").toString());
 		//System.out.println("session.getAttribute(\"loginid\"):" + session.getAttribute("loginid"));
 
@@ -141,6 +166,7 @@ public class QnaController {
 	
 	// get question list
 	@RequestMapping("/qnalist.bc")
+	@ResponseBody
 	public void qnalist(@RequestParam(value = "classid") String cid, HttpServletResponse response)
 			throws Exception {
 		

@@ -10,6 +10,16 @@
 </style>
 <script>
 	$(document).ready(function() {
+		$('.search').click(function(e){
+			e.preventDefault();
+			var keyword = $('[name=keyword]').val();
+			if(keyword==''){
+				alert('검색어를 입력하지 않으셨어요!');
+				return;
+			}
+			$('form').submit();
+		});
+		
 		
 		$('.qbtn').click(function(){
 			location.href="write.bc";
@@ -66,7 +76,7 @@
 			<form action="qsearch.bc">
 				<input type="text" class="form-control" name="keyword" placeholder="또 검색해보세요!"> 
 				<span class="input-group-btn">
-					<button class="btn btn-default" type="submit">검색하기</button>
+					<button class="btn btn-default search">검색하기</button>
 				</span>
 			</form>
 		</div>

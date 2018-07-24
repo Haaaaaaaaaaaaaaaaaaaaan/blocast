@@ -9,5 +9,6 @@ public interface ClassMapper {
 	public void delete(String obj);
 	public void update(ClassVO obj);
 	public ClassVO select(String obj);
+	public ClassVO selectname(String obj);
 	public ArrayList<ClassVO> selectall();
 }
