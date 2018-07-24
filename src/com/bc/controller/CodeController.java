@@ -46,25 +46,39 @@ public class CodeController {
 		mv.addObject("centerpage","code/codemain");
 		return mv;
 	}
-	@RequestMapping("/blockchain.bc")
-	public ModelAndView blockchain() {
+	@RequestMapping("/blockchainday01.bc")
+	public ModelAndView blockchain01() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
-		mv.addObject("centerpage","code/blockchain");
+		mv.addObject("centerpage","code/blockday01");
+		return mv;
+	}
+	@RequestMapping("/blockchainday02.bc")
+	public ModelAndView blockchain02() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("main");
+		mv.addObject("centerpage","code/blockday02");
+		return mv;
+	}
+	@RequestMapping("/blockchainday03.bc")
+	public ModelAndView blockchain03() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("main");
+		mv.addObject("centerpage","code/blockday03");
 		return mv;
 	}
 	@RequestMapping("/bigdata.bc")
 	public ModelAndView bigdata() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
-		mv.addObject("centerpage","code/bigdata");
+		mv.addObject("code_center","code/bigdata");
 		return mv;
 	}
 	@RequestMapping("/iot.bc")
 	public ModelAndView iot() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
-		mv.addObject("centerpage","code/iot");
+		mv.addObject("code_center","code/iot");
 		return mv;
 	}	
 	//과목보기
@@ -72,7 +86,7 @@ public class CodeController {
 	public ModelAndView codelist() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
-		mv.addObject("centerpage","code/codeupload");
+		mv.addObject("code_center","code/codeupload");
 		return mv;
 	}
 	

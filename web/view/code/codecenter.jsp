@@ -15,6 +15,6 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<h1>Code Center</h1>
+
 </body>
 </html>
