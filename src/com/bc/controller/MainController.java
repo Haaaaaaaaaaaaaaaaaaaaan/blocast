@@ -124,11 +124,11 @@ public class MainController {
 		System.out.println("user 2:" + user2);
 		// 네이버일 경우 smtp.naver.com 을 입력합니다. 
 		// Google일 경우 smtp.gmail.com 을 입력합니다. 
-		String host = "smtp.gmail.com";
+		String host = "smtp.naver.com";
 		
-		final String username = "hny4813@naver.com"; //네이버 아이디를 입력해주세요. @nave.com은 입력하지 마시구요. 
-		final String password = "yeah0604"; //네이버 이메일 비밀번호를 입력해주세요.
-		int port=465; //포트번호
+		final String username = "hny4813"; //네이버 아이디를 입력해주세요. @nave.com은 입력하지 마시구요. 
+		final String password = "RLA20150205"; //네이버 이메일 비밀번호를 입력해주세요.
+		int port=587; //포트번호
 
 		
 		
@@ -143,7 +143,7 @@ public class MainController {
 				mv.addObject("centerpage","user/email");
 				mv.addObject("resultt", "asdf");
 				
-				return mv;
+				return mv; 
 			}
 			else if(user != null && user.getEmail().equals(email))
 			{
@@ -158,11 +158,10 @@ public class MainController {
 				Properties props = System.getProperties(); // 정보를 담기 위한 객체 생성
 
 				// SMTP 서버 정보 설정 
+				props.put("mail.smtp.starttls.enable", "true");
 				props.put("mail.smtp.host", host); 
-				props.put("mail.smtp.port", port); 
 				props.put("mail.smtp.auth", "true"); 
-				props.put("mail.smtp.ssl.enable", "true"); 
-				props.put("mail.smtp.ssl.trust", host);
+				props.put("mail.smtp.port", port); 
 				
 				//Session 생성 
 				Session session = Session.getDefaultInstance(
