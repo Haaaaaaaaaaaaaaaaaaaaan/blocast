@@ -24,20 +24,63 @@ $(document).ready(function(){
 <body>
 <div class="row">
   <div class="col-sm-4">
-  	<ul>
-		<li><a href="blockchain.bc">블록체인 전문가</a></li>
-			<ul>
-				<li>day01</li>
-				<li>day02</li>
-				<li>day03</li>
-			</ul>
-		<li><a href="bigdata.bc">빅데이터 분석 분석가</a></li>
-		<li><a href="iot.bc">IOT 개발 전문가</a></li>
-	</ul>
+	 <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+	 
+	 <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">블록체인 핀테크 전문가
+              </a>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="card-body">
+              <a href="">day01</a><br>
+              <a href="">day01</a><br>
+              <a href="">day01</a><br>
+             </div>
+          </div>
+        </div>
+        
+	 
+	 <div class="card">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">빅데이터 분석 전문가
+              </a>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="card-body">
+              <a href="">day02</a><br>
+              <a href="">day02</a><br>
+              <a href="">day02</a><br>
+              </div>
+          </div>
+        </div>
+        
+        
+        <div class="card">
+          <div class="card-header" role="tab" id="headingThree">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">IoT 개발 전문가</a>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="card-body">
+              <a href="">day03</a><br>
+              <a href="">day03</a><br>
+              <a href="">day03</a><br>
+            </div>
+          </div>
+        </div>
+	 </div>
   </div>
+  
   <div class="col-sm-8">
   	<a href="codelist.bc">upload</a>
   </div>
+  
 </div>
 </body>
 </html>
