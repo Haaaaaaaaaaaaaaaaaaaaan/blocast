@@ -6,12 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bc.dao.mapper.ClassMapper;
+import com.bc.frame.CDao;
 import com.bc.frame.Dao;
 import com.bc.vo.ClassVO;
 import com.bc.vo.UsersVO;
 
 @Repository("cdao")
-public class ClassDao implements Dao<ClassVO,String>{
+public class ClassDao implements Dao<ClassVO,String>, CDao<ClassVO,String>{
 
 	@Autowired
 	ClassMapper mapper;
@@ -46,6 +47,12 @@ public class ClassDao implements Dao<ClassVO,String>{
 	public void insert(String obj) throws Exception {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public ClassVO selectname(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.selectname(obj);
 	}
 
 }

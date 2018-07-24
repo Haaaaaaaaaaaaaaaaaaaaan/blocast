@@ -4,16 +4,21 @@ import java.util.ArrayList;
 
 import javax.annotation.Resource;
 
+import com.bc.frame.CDao;
+import com.bc.frame.CService;
 import com.bc.frame.Dao;
 import com.bc.frame.Service;
 import com.bc.vo.ClassVO;
 import com.bc.vo.UsersVO;
 
 @org.springframework.stereotype.Service("cservice")
-public class ClassService implements Service<ClassVO, String>{
+public class ClassService implements Service<ClassVO, String>, CService<ClassVO, String>{
 	
 	@Resource(name = "cdao")
 	Dao<ClassVO, String> cdao;
+	
+	@Resource(name = "cdao")
+	CDao<ClassVO, String> cdao2;
 
 	@Override
 	public void register(ClassVO t) throws Exception {
@@ -48,6 +53,12 @@ public class ClassService implements Service<ClassVO, String>{
 	public void register(String v) throws Exception {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public ClassVO getname(String v) throws Exception {
+		// TODO Auto-generated method stub
+		return cdao2.selectname(v);
 	}
 	
 }
