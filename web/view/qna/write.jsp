@@ -4,13 +4,14 @@
    
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
 
-<script>
-$(document).ready(function(){
-});
-</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+
 <form action="writeimpl.bc" method="POST">
 <div class="container">
 	<br>
@@ -47,7 +48,7 @@ $(document).ready(function(){
 			
 			<label>Content</label>
 			<div class="form-group"> 
-				<input type="text" class="form-control" placeholder="Insert contents" name="content">
+				<textarea id="summernote" name="content"></textarea>
 			</div>
 			
 			<label>Tag</label>
@@ -69,3 +70,11 @@ $(document).ready(function(){
 </div>
 
 </form>
+
+<script>
+	 $('#summernote').summernote({
+	        placeholder: 'insert content',
+	        tabsize: 2,
+	        height: 100
+	      });
+</script>
