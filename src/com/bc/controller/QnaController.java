@@ -138,6 +138,8 @@ public class QnaController {
 		return mv;
 	}
 	
+	
+	// get question list
 	@RequestMapping("/qnalist.bc")
 	public void qnalist(@RequestParam(value = "classid") String cid, HttpServletResponse response)
 			throws Exception {
@@ -153,8 +155,9 @@ public class QnaController {
 			JSONObject jo = new JSONObject();
 			jo.put("id", q.getId());
 			jo.put("title", q.getTitle());
+			jo.put("contents", q.getContents());
 			jo.put("author", q.getAuthor());
-			jo.put("regdate", q.getRegdate());
+			jo.put("regdate", q.getRegdate().toString());
 			ja.add(jo);
 			
 		}
@@ -162,5 +165,24 @@ public class QnaController {
 		out.println(ja.toJSONString());
 
 		out.close();
+	}
+	
+	@RequestMapping("/qsearch.bc")
+	public ModelAndView qsearch(HttpServletRequest request) {
+		String keyword = request.getParameter("keyword");
+		ArrayList<QuestionVO> qlist = null;
+		
+		try {
+			qlist = qservice.getNameCont(keyword);
+			System.out.println(qlist);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("main");
+		mv.addObject("centerpage","qna/searchlist");
+		mv.addObject("qlist",qlist);
+		return mv;
 	}
 }
