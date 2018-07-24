@@ -9,6 +9,30 @@
 </style>
 <script>
 	$(document).ready(function() {
+		function getTag(id){
+			$.ajax({
+				url : 'taglist.bc',
+				data : id,
+				success : function(data) {
+					return data;
+				},
+				error : function(request,status,error){
+			        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			    }
+			
+			});
+		}
+		
+		$('.search').click(function(e){
+			e.preventDefault();
+			var keyword = $('[name=keyword]').val();
+			if(keyword==''){
+				alert('검색어를 입력하지 않으셨어요!');
+				return;
+			}
+			$('form').submit();
+		});
+		
 		
 		$('.qbtn').click(function(){
 			location.href="write.bc";
@@ -23,16 +47,25 @@
 				result+=$(this).attr('title');
 				result+='</h5>';
 				result+='</div>';//card-header
-				result+='<div class="card-body">';
-				result+=$(this).attr('author');
-				result+='</div>';//card-body
+				
 				result+='<div id="c'+index+'" class="collapse" role="tabpanel">';
 				result+='<div class="card-body">';
+				result+='<h5 class="text-mute"> 태그목록:'
+				var tags = [];
+				tags = getTag($(this).attr('id'));
+				
+				$(tags).each(function(idx){
+					result+='#'+this+' ';
+				});
+				result+='</h5>'
+				result+='<p>';
 				result+=$(this).attr('contents');
+				result+='</p>';
+				
 				result+='</div>';//card-body
 				result+='</div>';//collapse
 				result+='<div class="card-footer text-muted">작성자 : ';
-				result+=$(this).attr('regdate');
+				result+=$(this).attr('author');
 				result+='</div>';//card-footer
 				result+='</div>';//card
 				
@@ -86,7 +119,7 @@
 					<form action="qsearch.bc">
 						<input type="text" class="form-control" name="keyword" placeholder="먼저 검색해보세요!">
 						<span class="input-group-btn">
-							<button class="btn btn-default" onclick="search();")>검색하기</button>
+							<button class="btn btn-default search")>검색하기</button>
 						</span>
 					</form>
 				</div>
@@ -118,15 +151,6 @@
 	
 
 </div>
-
-<script>
-function search(){
-	var keyword = $('[name=keyword]').val();
-	alert(keyword);
-	
-	$()
-}
-</script>
 
 
 
