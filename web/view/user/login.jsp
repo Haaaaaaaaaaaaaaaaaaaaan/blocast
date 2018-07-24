@@ -4,7 +4,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
 <script>
 
@@ -87,7 +87,7 @@ $(this).prev().attr('type', function(index, attr){return attr == 'password' ? 't
 		
 		</div>
 		<div class="col-sm-10 col-md-10 col-lg-6">
-		<h1 style="font-family: 'Alex Brush', cursive;">Login Page</h1>
+		<h3 style="font-family: 'Source Sans Pro', sans-serif; position:relative; text-align:center;">Login Page</h3>
 		</div>
 		
 		<div class="col-sm-1 col-md-1 col-lg-3">

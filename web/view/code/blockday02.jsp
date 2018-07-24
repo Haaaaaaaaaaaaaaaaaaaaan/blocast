@@ -24,6 +24,8 @@ $(document).ready(
           <a href="index.html">Home</a>
         </li>
         <li class="breadcrumb-item active">Code</li>
+        <li class="breadcrumb-item active">BlockChain</li>
+        <li class="breadcrumb-item active">Day02</li>
       </ol>
 	<div class="row">
 	 <div class="col-sm-4">
@@ -54,6 +56,7 @@ $(document).ready(
           <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
             <div class="card-body">
               <a href="bigdatanocode.bc" style="font-family: 'Nanum Gothic', sans-serif;">아직 올라온 코드가 없습니다 ㅠ_ㅠ</a>
+						
               </div>
           </div>
         </div>
@@ -81,17 +84,10 @@ $(document).ready(
 	</div>
         
         <div class="col-sm-8">
-			<div class="col-lg-6 portfolio-item">
-          <div class="card h-75">
-            <a href="#"><img class="card-img-top" src="img/code.png" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">보고 싶은 코드를 고르세요.</a>
-              </h4>
-              <p class="card-text">학우들을 위해 본인의 코드를 업로드하여 공유해보세요. 더 나은 학습 환경을 내 손으로 만들어보세요.</p>
-            </div>
-          </div>
-        </div>
+		<ol class="breadcrumb">
+        <li class="breadcrumb-item active">파일명</li>
+      </ol>
+
 	</div>
 	</div>
 	</div>

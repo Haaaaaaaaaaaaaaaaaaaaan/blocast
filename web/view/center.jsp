@@ -49,7 +49,7 @@
     <!-- Page Content -->
     <div class="container">
 	
-      <h2 class="my-4" style="font-family: 'Nanum Gothic', sans-serif;"><div style="text-align:center;">멀티캠퍼스 <span style="font-weight:bold;">BLOCAST</span>에 오신 것을 환영합니다!</div></h2>
+      <h2 class="my-4" style="font-family: 'Nanum Gothic', sans-serif;"><div style="text-align:center;">멀티캠퍼스 <span style="font-weight:bold; color:#1D6A96;">BLOCAST</span>에 오신 것을 환영합니다!</div></h2>
 
       <!-- Marketing Icons Section -->
       <div class="row">
@@ -60,7 +60,7 @@
               <p class="card-text">Java, SQL, Spring, Jquery, Ajax, Spring, Linux, Blockchain Infra 등 수업에서 배운 다양한 코드를 업로드하고 확인하세요.</p>
             </div>
             <div class="card-footer">
-              <a href="codelist.bc" class="btn btn-primary">코드 보러 가기</a>
+              <a href="blockchainday01.bc" class="btn btn-primary">코드 보러 가기</a>
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@
               <p class="card-text">수업에서 배운 R, Python, Agile 등 여러 프로그래밍, 응용 SW 기술의 코드를 확인하고 빅데이터 실력 향상을 위해 서로 분석 스킬을 공유, 질답하세요!</p>
             </div>
             <div class="card-footer">
-              <a href="codelist.bc" class="btn btn-primary">코드 보러 가기</a>
+              <a href="bigdatanocode.bc" class="btn btn-primary">코드 보러 가기</a>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@
               <p class="card-text">Python, 우분투 리눅스, 어플리케이션 언어 등 수업 내용의 코드를 추가하고, 모두와 소통하며 더욱 창의적인 IoT 세상을 만들어보세요.</p>
             </div>
             <div class="card-footer">
-              <a href="codelist.bc" class="btn btn-primary">코드 보러 가기</a>
+              <a href="iotnocode.bc" class="btn btn-primary">코드 보러 가기</a>
             </div>
           </div>
         </div>

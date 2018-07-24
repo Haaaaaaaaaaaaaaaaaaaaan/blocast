@@ -46,6 +46,20 @@ public class CodeController {
 		mv.addObject("centerpage","code/codemain");
 		return mv;
 	}
+	@RequestMapping("/iotnocode.bc")
+	public ModelAndView iotnocode() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("main");
+		mv.addObject("centerpage","code/nocode");
+		return mv;
+	}
+	@RequestMapping("/bigdatanocode.bc")
+	public ModelAndView bigdatanocode() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("main");
+		mv.addObject("centerpage","code/nocode");
+		return mv;
+	}
 	@RequestMapping("/blockchainday01.bc")
 	public ModelAndView blockchain01() {
 		ModelAndView mv = new ModelAndView();

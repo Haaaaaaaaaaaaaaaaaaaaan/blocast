@@ -68,7 +68,7 @@ if(resultt != 'null') {
 		
 		</div>
 		<div class="col-sm-10 col-md-10 col-lg-6">
-		<h1 style="font-family: 'Alex Brush', cursive;">Email Page</h1>
+		<h3 style="font-family: 'Source Sans Pro', sans-serif; position:relative; text-align:center;">Email Page</h3>
 		</div>
 		
 		<div class="col-sm-1 col-md-1 col-lg-3">

@@ -53,7 +53,8 @@ $(document).ready(
           </div>
           <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
             <div class="card-body">
-              <a href="bigdatanocode.bc" style="font-family: 'Nanum Gothic', sans-serif;">아직 올라온 코드가 없습니다 ㅠ_ㅠ</a>
+              <a href="" style="font-family: 'Nanum Gothic', sans-serif;">아직 올라온 코드가 없습니다 ㅠ_ㅠ</a>
+						
               </div>
           </div>
         </div>
@@ -66,7 +67,7 @@ $(document).ready(
           </div>
           <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
             <div class="card-body">
-              <a href="iotnocode.bc" style="font-family: 'Nanum Gothic', sans-serif;">아직 올라온 코드가 없습니다 ㅠ_ㅠ</a>
+              <a href="" style="font-family: 'Nanum Gothic', sans-serif;">아직 올라온 코드가 없습니다 ㅠ_ㅠ</a>
 						
             </div>
           </div>
@@ -86,9 +87,9 @@ $(document).ready(
             <a href="#"><img class="card-img-top" src="img/code.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">보고 싶은 코드를 고르세요.</a>
+                <a href="#">올라온 코드가 없습니다.</a>
               </h4>
-              <p class="card-text">학우들을 위해 본인의 코드를 업로드하여 공유해보세요. 더 나은 학습 환경을 내 손으로 만들어보세요.</p>
+              <p class="card-text">본인을 위해, 학우를 위해 코드를 공유해보세요!</p>
             </div>
           </div>
         </div>
