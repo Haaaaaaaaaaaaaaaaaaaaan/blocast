@@ -19,7 +19,7 @@
 				alert('검색어를 입력하지 않으셨어요!');
 				return;
 			}
-			$('form').submit();
+			$('.search-form').submit();
 		});
 		
 		
@@ -36,22 +36,40 @@
 		function collapseAnswer(answer){
 			var qid = $(answer[0]).attr('qid');
 			var result = '';
-			
-			$(answer).each(function(index){
-				result+='<div class="card">';
-				result+='<h5> 작성자 : ';
-				result+=$(this).attr('author');
-				result+='</h5>';
-				result+='<p>';
-				result+=$(this).attr('contents');
-				result+='</p>';
-				result+='<p> 작성일: ';
-				result+=$(this).attr('regdate');
-				result+='</p>';
-				result+='</div>';
-			});
+			if($(answer[0]).attr('author')){
+				$(answer).each(function(index){
+					result+='<div class="card">';
+					result+='<h5> 작성자 : ';
+					result+=$(this).attr('author');
+					result+='</h5>';
+					result+='<p>';
+					result+=$(this).attr('contents');
+					result+='</p>';
+					result+='<p> 작성일: ';
+					result+=$(this).attr('regdate');
+					result+='</p>';
+					result+='</div>';
+				});
+			}
+			result+='<form class="answer-form" action="answer.bc">'
+			result+='<div class="form-group">';
+			result+='<label for="comment">답글 남기기:</label>';
+			result+='<textarea class="form-control" rows="5" id="comment"></textarea>';   
+			result+='<button  class="form-control ansbtn" >답변 등록하기</button>'
+		    result+='</div>';
+		    result+='</form>';
 			$('#ans'+qid).html(result);
+			
+			$('.ansbtn').click(function(){
+				var sessionId = '<%=session.getAttribute("loginid") %>';
+				if(sessionId=='null'){
+					location.href="login.bc";
+				}else{
+					$('.answer-form').submit();			
+				}
+			});
 			$('#ans'+qid).collapse();
+			
 		}
 		
 		
@@ -74,15 +92,14 @@
 				result+='</a>';
 			});
 			
-			result+='<div id="'+id+'" class="alert alert-secondary colans hoverable" role="tab" data-toggle="collapse" data-parent="#accordion" href="#ans'+id+'" aria-expanded="true" aria-controls="collapseOne">';
+			result+='<div id="'+id+'" class="alert alert-secondary colans hoverable" data-toggle="collapse" data-target="#ans'+id+'">';
 			if($(question).attr('asize')==0){
 				result+='답글이 아직 없네요, 답글을 등록 해볼까요?';
 			}else{
 				result+=$(question).attr('asize')+'개의 답글이 있습니다! 펼쳐볼까요?';
 			}
 			result+='</div>';
-			result+='<div id="ans'+id+'" class="collapse" role="tabpanel">';
-			
+			result+='<div id="ans'+id+'" class="collapse">';
 			
 			result+='</div>';//collapse
 			
@@ -123,17 +140,16 @@
 			
 			$(data).each(function(index) {
 				result+='<div id="'+$(this).attr('id')+'"class="card mb-1 hoverable">';
-				result+='<div class="card-header" role="tab" data-toggle="collapse" data-parent="#accordion" href="#c'+$(this).attr('id')+'" aria-expanded="true" aria-controls="collapseOne">';
+				result+='<div class="card-header content-toggle" role="tab" data-toggle="collapse" data-parent="#accordion" href="#c'+$(this).attr('id')+'" aria-expanded="true" aria-controls="collapseOne">';
 				result+='<h5 class="card-title">';
 				result+=$(this).attr('title');
 				result+='</h5>';
 				result+='</div>';//card-header
 				
 				result+='<div id="c'+$(this).attr('id')+'" class="collapse" role="tabpanel">';
-				
-				
+				 
 				result+='</div>';//collapse
-				result+='<div class="card-footer text-muted">작성자 : ';
+				result+='<div class="card-footer content-toggle text-muted">작성자 : ';
 				result+=$(this).attr('author');
 				result+='</div>';//card-footer
 				result+='</div>';//card
@@ -144,8 +160,9 @@
 			});
 			$('.qnas').html(result);
 			
-			$('.card').click(function(){
-				var qid = $(this).attr('id');
+			$('.content-toggle').click(function(){
+				var qid = $(this).parents('div').attr('id');
+				
 				var id = {
 						"qid" : qid
 					};
@@ -204,7 +221,7 @@
 		<div class="row">
 			<div class="col-md-9">
 				<div class="input-group">
-					<form action="qsearch.bc">
+					<form class="search-form" action="qsearch.bc">
 						<input type="text" class="form-control" name="keyword" placeholder="먼저 검색해보세요!">
 						<span class="input-group-btn">
 							<button class="btn btn-default search")>검색하기</button>
