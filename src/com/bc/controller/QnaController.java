@@ -145,6 +145,7 @@ public class QnaController {
 				boolean flag = false;
 				String input = list1.get(i).replaceAll(" ", "").replaceAll("#", "");
 				input = input.toUpperCase();
+				
 				for(int j =0; j<tags.size(); j++)
 				{
 					TagVO tag2 = tags.get(j);
@@ -153,6 +154,7 @@ public class QnaController {
 					if(tag2.getName().equals(input))
 					{
 						flag=true;
+						tali1.add(tag2);
 					}
 					
 					if(flag==true) {
