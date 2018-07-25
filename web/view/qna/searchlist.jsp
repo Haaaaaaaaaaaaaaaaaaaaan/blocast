@@ -7,6 +7,7 @@
 	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
 	transition: all 200ms ease-out;
 }
+.tagbtn { cursor: pointer; }
 </style>
 <script>
 	$(document).ready(function() {
@@ -30,13 +31,12 @@
 				});
 			}
 			
-			result+='<form class="answer-form">'
 			result+='<div class="form-group">';
 			result+='<label for="comment">답글 남기기:</label>';
-			result+='<textarea class="form-control anstext" rows="5" id="comment"></textarea>';   
-			result+='<button  class="form-control ansbtn" >답변 등록하기</button>'
-			result+='</div>';
-			result+='</form>';
+			result+='<textarea id="ac'+qid+'" class="form-control anstext" rows="5" id="comment"></textarea>';   
+			result+='<button class="form-control ansbtn" name="'+qid+'">답변 등록하기</button>'
+		    result+='</div>';
+		    
 			$('#ans'+qid).html(result);
 			$('.anstext').click(function(){
 				var sessionId = '<%=session.getAttribute("loginid") %>';
@@ -49,8 +49,26 @@
 				if(sessionId=='null'){
 					alert('로그인 먼저 해주세요!');
 				}else{
-					$('.answer-form').attr('action','answer.bc');
-					$('.answer-form').submit();			
+					var qid=$(this).attr('name');
+					var content=$('#ac'+qid).val();
+					var answer = {
+							"qid" : qid,
+							"author" : sessionId,
+							"content" : content
+						};
+					console.log(answer);
+					$.ajax({
+						url : 'answer.bc',
+						data : answer,
+						success : function(data) {
+							collapseAnswer(data);
+						},
+						error : function(request,status,error){
+	 				        alert("getAnswer AJAX 에러에요!\n"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					    },
+					    dataType: 'json'
+					
+					});
 				}
 			});
 			$('#ans'+qid).collapse();
