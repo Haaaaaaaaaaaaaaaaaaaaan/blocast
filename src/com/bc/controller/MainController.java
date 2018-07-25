@@ -126,8 +126,8 @@ public class MainController {
 		// Google일 경우 smtp.gmail.com 을 입력합니다. 
 		String host = "smtp.naver.com";
 		
-		final String username = "hny4813"; //네이버 아이디를 입력해주세요. @nave.com은 입력하지 마시구요. 
-		final String password = "RLA20150205"; //네이버 이메일 비밀번호를 입력해주세요.
+		final String username = ""; //네이버 아이디를 입력해주세요. @nave.com은 입력하지 마시구요. 
+		final String password = ""; //네이버 이메일 비밀번호를 입력해주세요.
 		int port=587; //포트번호
 
 		
@@ -150,9 +150,10 @@ public class MainController {
 				// 메일 내용 
 				String recipient = email; 
 				//받는 사람의 메일주소를 입력해주세요. 
-				String subject = "멀티캠퍼스 BLOCAST"+user.getId()+"님 안녕하세요. id와 password 전달해드립니다."; 
+				String subject = "[멀티캠퍼스 BLOCAST] "+user.getId()+"님 안녕하세요. id와 password 전달해드립니다."; 
 				//메일 제목 입력해주세요. 
-				String body = user.getName()+"님의 아이디는 "+ user.getId()+""
+				System.out.println("user.getName():"+ user.getName());
+				String body = user.getName()+"님의 아이디는 "+ user.getId()+", "
 						+ "비밀번호는 "+ user.getPwd()+"입니다."; 
 				//메일 내용 입력해주세요. 
 				Properties props = System.getProperties(); // 정보를 담기 위한 객체 생성
@@ -180,7 +181,8 @@ public class MainController {
 				//발신자 셋팅 , 보내는 사람의 이메일주소를 한번 더 입력합니다. 이때는 이메일 풀 주소를 다 작성해주세요. 
 				mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient)); //수신자셋팅 
 				//.TO 외에 .CC(참조) .BCC(숨은참조) 도 있음 
-				mimeMessage.setSubject(MimeUtility.encodeText(subject,"EUC-KR", "B")); 
+				mimeMessage.setSubject(MimeUtility.encodeText(subject,"UTF-8", "B")); 
+				mimeMessage.setContent(body, "text/html; charset=UTF-8");
 				//제목셋팅
 				mimeMessage.setText(body); 
 				//내용셋팅 

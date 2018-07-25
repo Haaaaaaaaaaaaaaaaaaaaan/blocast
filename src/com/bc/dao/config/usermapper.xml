@@ -21,7 +21,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM USERS
 	</select>
 	<select id="selectSearch" parameterType="users" resultType="users">
-	SELECT ID, PWD, EMAIL FROM USERS WHERE NAME=#{name} and EMAIL=#{email}
+	SELECT * FROM USERS WHERE NAME=#{name} and EMAIL=#{email}
 	</select>
 	
 	<insert id="insert" parameterType="users">

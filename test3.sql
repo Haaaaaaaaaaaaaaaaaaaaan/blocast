@@ -6,6 +6,8 @@ increment by 1
 
 select seq_class.NEXTVAL FROM DUAL
 
+INSERT INTO ANSWER values(ANSWER_ID_SEQ.NEXTVAL,sysdate, 'nayoung', 1, '¾îÂ¼¶ó°í¿ä', 0,null,null,null);
+
 INSERT INTO CLASS values(seq_class.NEXTVAL,'name',sysdate);
 
 select * from USERS;
