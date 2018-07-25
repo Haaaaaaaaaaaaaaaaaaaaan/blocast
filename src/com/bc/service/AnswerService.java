@@ -4,16 +4,20 @@ import java.util.ArrayList;
 
 import javax.annotation.Resource;
 
+import com.bc.frame.ADao;
+import com.bc.frame.AService;
 import com.bc.frame.Dao;
 import com.bc.frame.Service;
 import com.bc.vo.AnswerVO;
 import com.bc.vo.UsersVO;
 
 @org.springframework.stereotype.Service("aservice")
-public class AnswerService implements Service<AnswerVO, String>{
+public class AnswerService implements Service<AnswerVO, String>, AService<AnswerVO, String>{
 	
 	@Resource(name = "adao")
 	Dao<AnswerVO, String> adao;
+	@Resource(name = "adao")
+	ADao<AnswerVO, String> dao;
 
 	@Override
 	public void register(AnswerVO t) throws Exception {
@@ -48,6 +52,11 @@ public class AnswerService implements Service<AnswerVO, String>{
 	public void register(String v) throws Exception {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public ArrayList<AnswerVO> getqid(String v) throws Exception {
+		return dao.selectqid(v);
 	}
 	
 }

@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM ANSWER
 	</select>
 	<insert id="insert" parameterType="answer">
-		INSERT INTO ANSWER VALUES (ANSWER_ID_SEQ.NEXTVAL,SYSDATE,#{author},#{question_id},#{content},#{thumbsup},#{imgname1},#{imgname2},#{imgname3})    
+		INSERT INTO ANSWER VALUES (ANSWER_ID_SEQ.NEXTVAL,SYSDATE,#{author},#{question_id},#{content},#{thumbsup},#{imgname1, jdbcType=VARCHAR},#{imgname2, jdbcType=VARCHAR},#{imgname3, jdbcType=VARCHAR})    
 	</insert>
 	<update id="update" parameterType="answer">
 		UPDATE ANSWER SET AUTHOR=#{author},QUESTION_ID=#{question_id},CONTENT=#{content}, THUMBSUP= #{thumbsup}, IMGNAME1 = #{imgname1}, IMGNAME2 =#{imgname2}, IMGNAME3 = #{imgname3} WHERE ID=#{id}  

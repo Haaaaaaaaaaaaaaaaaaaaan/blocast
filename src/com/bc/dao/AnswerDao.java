@@ -6,13 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bc.dao.mapper.AnswerMapper;
+import com.bc.frame.ADao;
 import com.bc.frame.Dao;
 import com.bc.vo.AnswerVO;
 import com.bc.vo.UsersVO;
 
 
 @Repository("adao")
-public class AnswerDao implements Dao<AnswerVO,String>{
+public class AnswerDao implements Dao<AnswerVO,String>, ADao<AnswerVO, String>{
 
 	@Autowired
 	AnswerMapper mapper;
@@ -46,6 +47,11 @@ public class AnswerDao implements Dao<AnswerVO,String>{
 	public void insert(String obj) throws Exception {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public ArrayList<AnswerVO> selectqid(String v) throws Exception {
+		return mapper.selectqid(v);
 	}
 
 	

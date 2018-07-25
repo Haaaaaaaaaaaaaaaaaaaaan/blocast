@@ -10,6 +10,6 @@ public interface AnswerMapper {
 	public void update(AnswerVO obj);
 	public AnswerVO select(String obj);
 	public AnswerVO selectauthor(String obj);
-	public AnswerVO selectqid(String obj);
+	public ArrayList<AnswerVO> selectqid(String obj);
 	public ArrayList<AnswerVO> selectall();
 }

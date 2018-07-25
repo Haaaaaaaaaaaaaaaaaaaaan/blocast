@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.nullValue;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -19,11 +20,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bc.frame.AService;
 import com.bc.frame.CService;
 import com.bc.frame.QService;
 import com.bc.frame.Service;
 import com.bc.frame.TService;
 import com.bc.frame.TlService;
+import com.bc.vo.AnswerVO;
 import com.bc.vo.ClassVO;
 import com.bc.vo.QuestionVO;
 import com.bc.vo.TagListVO;
@@ -32,6 +35,9 @@ import com.bc.vo.TagVO;
 @Controller
 public class QnaController {
 
+	@Resource(name="aservice")
+	AService<AnswerVO, String> aservice;
+	
 	@Resource(name="qservice")
 	QService<QuestionVO, String> qservice;
 	
@@ -39,10 +45,10 @@ public class QnaController {
 	Service<QuestionVO, String> qservice2;
 	
 	@Resource(name="cservice")
-	Service<QuestionVO, String> cservice;
+	Service<ClassVO, String> cservice;
 	
 	@Resource(name="cservice")
-	CService<QuestionVO, String> cservice2;
+	CService<ClassVO, String> cservice2;
 	
 	@Resource(name="tservice")
 	TService<TagVO, String> tservice;
@@ -138,6 +144,7 @@ public class QnaController {
 				ArrayList<TagVO> tags = service.get();
 				boolean flag = false;
 				String input = list1.get(i).replaceAll(" ", "").replaceAll("#", "");
+				input = input.toUpperCase();
 				for(int j =0; j<tags.size(); j++)
 				{
 					TagVO tag2 = tags.get(j);
@@ -220,29 +227,93 @@ public class QnaController {
 		response.setContentType("text/json;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		JSONArray ja = new JSONArray();
+		JSONObject jo = new JSONObject();
 		ArrayList<TagListVO> tlist = null;
-
-		tlist = tlservice.getTid(qid);
+		QuestionVO question = null;
+		ArrayList<AnswerVO> alist = new ArrayList<>();
+		tlist = tlservice.getQid(qid);
+		question = qservice2.get(qid);
+		alist.addAll(aservice.getqid(qid));
+		jo.put("id", question.getId());
+		jo.put("contents", question.getContents());
+		jo.put("regdate", question.getRegdate().toString());
+		jo.put("asize", alist.size());
 		for (TagListVO t : tlist) {
-			ja.add(service.get(t.getTag_id()).getName());
+			TagVO tag = service.get(t.getTag_id());
+			ja.add(tag.getName());
 		}
+		jo.put("tags", ja);
 
-		out.println(ja.toJSONString());
+		out.println(jo.toJSONString());
 
 		out.close();
 	}
 	
+	// get answer list where question_id is given
+		@RequestMapping("/alist.bc")
+		@ResponseBody
+		public void answerlist(@RequestParam(value = "qid") String qid, HttpServletResponse response) throws Exception {
+			response.setContentType("text/json;charset=utf-8");
+			PrintWriter out = response.getWriter();
+			JSONArray ja = new JSONArray();
+			
+			ArrayList<AnswerVO> alist = new ArrayList<>();
+			alist.addAll(aservice.getqid(qid));
+			
+			for(AnswerVO a : alist) {
+				JSONObject jo = new JSONObject();
+				jo.put("id", a.getId());
+				jo.put("qid", a.getQuestion_id());
+				jo.put("author", a.getAuthor());
+				jo.put("contents", a.getContent());
+				jo.put("regdate", a.getRegdate().toString());
+				ja.add(jo);
+			}
+
+			out.println(ja.toJSONString());
+
+			out.close();
+		}
+	
 	@RequestMapping("/qsearch.bc")
 	public ModelAndView qsearch(HttpServletRequest request) {
 		String keyword = request.getParameter("keyword");
-		ArrayList<QuestionVO> qlist = null;
 		
-		try {
-			qlist = qservice.getNameCont(keyword);
-			System.out.println(qlist);
-		} catch (Exception e) {
-			e.printStackTrace();
+		ArrayList<QuestionVO> qlist = null;
+		ArrayList<TagVO> tlist = null;
+		ArrayList<TagListVO> tllist = new ArrayList<>();
+		if(keyword.charAt(0)=='#') {
+			keyword=keyword.replaceAll("#", "");
+			keyword=keyword.toUpperCase();
+			HashSet<QuestionVO> qset = new HashSet<>();
+			try {
+				tlist = tservice.getName(keyword);
+				System.out.println(tlist);
+				for(TagVO t : tlist) {
+					tllist.addAll(tlservice.getTid(t.getId()));
+				}
+				qlist = new ArrayList<>();
+				for(TagListVO tl : tllist) {
+					qset.add(qservice2.get(tl.getQuestion_id()));
+				}
+				qlist = new ArrayList<>();
+				qlist.addAll(qset);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}else {
+			try {
+				qlist = qservice.getNameCont(keyword);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
+		
+		
+		
+		
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
