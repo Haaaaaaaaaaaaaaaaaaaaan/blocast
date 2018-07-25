@@ -13,6 +13,14 @@ public class FolderVO {
 	private String class_id;
 	private String name;
 	
+	public FolderVO() {
+	}
+	
+	public FolderVO(String class_id, String name) {
+		this.class_id = class_id;
+		this.name = name;
+	}
+
 	public String getId() {
 		return id;
 	}

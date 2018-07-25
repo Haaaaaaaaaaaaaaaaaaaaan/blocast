@@ -6,27 +6,31 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bc.frame.Service;
+import com.bc.vo.FilesVO;
+import com.bc.vo.FolderVO;
+
 @Controller
 public class CodeController {
 
-	//@Resource(name="qservice")
-	//QService<QuestionVO, String> qservice;
+	@Resource(name="fservice")
+	Service<FilesVO,String> fservice;
 	
-	//@Resource(name="tservice")
-	//TService<TagVO, String> tservice;
-	
-	//@Resource(name="tlservice")
-	//TlService<TagListVO, String> tlservice;
+	@Resource(name="fdservice")
+	Service<FolderVO,String> fdservice;
 	
 	
 //	public ModelAndView codemain() {
@@ -61,10 +65,100 @@ public class CodeController {
 		return mv;
 	}
 	@RequestMapping("/blockchainday01.bc")
-	public ModelAndView blockchain01() {
+	public ModelAndView blockchain01(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
 		mv.addObject("centerpage","code/blockday01");
+		
+		System.out.println("blockchain day01 in");
+		String code = null;
+		String filename = null;
+		String subject = null;
+		String day = request.getParameter("day");
+		String src = "C:\\code\\";
+		String ent = "\\r\\n";
+		//System.out.println(code);
+		//System.out.println(filename);
+		//System.out.println(subject);
+		System.out.println(day);
+		ArrayList<String> codeList = null;
+		
+		try {
+			System.out.println("DB list get");
+			ArrayList<FilesVO> flist = fservice.get();
+			JSONObject data = new JSONObject();
+			JSONArray ja = new JSONArray();
+			JSONObject jo = null;
+			JSONArray ca = null;
+			JSONObject co = null;
+			PrintWriter writer = null;
+			
+			for(FilesVO files: flist) {
+				System.out.println("list in");
+				filename = files.getName();
+				StringBuffer folder = new StringBuffer();
+				folder.append("day0");
+				folder.append(files.getFolder_id());
+				ca = new JSONArray();
+				
+		        BufferedReader br = null;
+		        try {
+		            br = new BufferedReader(new FileReader(src+filename));
+		            codeList = new ArrayList<>();
+		            String line;
+		            while ((line = br.readLine()) != null) {
+		            	co = new JSONObject();
+		            	if(line.length() < 1) {
+		            		co.put("line" ,"e");
+		            	}else {
+		            		co.put("line" ,line);
+		            	}
+		            	ca.add(co);
+		            		
+		            	
+		            }
+//		            for(String s : codeList) {
+//		            	System.out.println(s);
+//		            }
+		        } catch (FileNotFoundException e) {
+		            e.printStackTrace();
+		        } catch (IOException e) {
+		            e.printStackTrace();
+		        }finally {
+		            if(br != null) try {br.close(); } catch (IOException e) {}
+		        }
+
+		        //json 파일 생성
+				jo = new JSONObject();
+				jo.put("filename", filename);
+				jo.put("day", folder.toString());
+				jo.put("code", ca);
+				//jo.put("subject", subject);
+				ja.add(jo);
+//		        //json 파일 생성
+//				ja = new JSONArray();
+//				jo = new JSONObject();
+//				jo.put("fileName", fileName);
+//				jo.put("code", sbGet.toString());
+//				//jo.put("subject", subject);
+//				jo.put("day", folder);
+//				ja.add(jo);
+//				//System.out.println(ja);
+			}
+			//data.put("data", ja);
+			try {
+				System.out.println(ja);
+				System.out.println("send to ajax");
+				//String json=data.toJSONString();
+				response.setContentType("text/json; charset=euc-kr");
+				writer = response.getWriter();
+				writer.print(ja);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
 		return mv;
 	}
 	@RequestMapping("/blockchainday02.bc")
@@ -105,16 +199,16 @@ public class CodeController {
 	}
 	
 	@RequestMapping("/codeupload.bc")	
-	public ModelAndView codeUpload(HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv = new ModelAndView();
-		//mv.setViewName("main");
-		//mv.addObject("centerpage", "code/codeupload");
-		
+	public void codeUpload(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("upload in");
 		String code = request.getParameter("code");
 		String filename = request.getParameter("filename");
+		String subject = request.getParameter("subject");
+		String day = request.getParameter("day");
 		System.out.println(code);
 		System.out.println(filename);
+		System.out.println(subject);
+		System.out.println(day);
 		
 		StringBuffer sb = new StringBuffer();
 		sb.append("C:\\code\\");
@@ -135,45 +229,44 @@ public class CodeController {
 		    	}
 		}
 		
-        // 텍스트 파일 읽기
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader(sb.toString()));
-            String line;
-            StringBuffer sbGet = new StringBuffer();
-            while ((line = br.readLine()) != null) {
-                System.out.println();
-            	sbGet.append(line);
-            }
-            //System.out.println(sbGet.toString());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
-            if(br != null) try {br.close(); } catch (IOException e) {}
-        }
+		JSONArray ja = new JSONArray();
+		JSONObject jo = new JSONObject();
+		jo.put("filename", filename);
+		jo.put("day", day);
+		jo.put("subject", subject);
+		jo.put("code", code);
+		ja.add(jo);
+		System.out.println(ja);
+		PrintWriter writer = null;
 		
-		return mv;
-		//JSONArray ja = new JSONArray();
-		//JSONObject jo = new JSONObject();
-		//jo.put("code", code);
-		//ja.add(jo);
-	//	System.out.println(ja);
-		//PrintWriter writer = null;
-		/*
 		try {
 			System.out.println("in try statement");
 			response.setContentType("text/json; charset=euc-kr");
 			writer = response.getWriter();
 			writer.print(ja);
-			//response.getWriter().print(code);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//if(pw!=null) pw.close();
-		*/
 		
+		//db에 저장
+		StringBuffer folderName = new StringBuffer();
+		folderName.append("day0");
+		folderName.append(day);
+		//System.out.println(folderName.toString());
+		try {
+			if(folderName.toString().equals(fdservice.get(folderName.toString()).getName())) {
+				//System.out.println("result true");
+				fservice.register(new FilesVO(day,filename));
+			}
+		} catch (Exception e1) {
+			//e1.printStackTrace();
+			try {
+				//System.out.println("result false");
+				fdservice.register(new FolderVO(subject,folderName.toString()));
+				fservice.register(new FilesVO(day,filename));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

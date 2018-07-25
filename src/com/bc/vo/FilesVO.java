@@ -12,6 +12,16 @@ public class FilesVO {
 	private String id;
 	private String folder_id;
 	private String name;
+	
+	public FilesVO() {
+	
+	}
+	
+	public FilesVO(String folder_id, String name) {
+		this.folder_id = folder_id;
+		this.name = name;
+	}
+
 	public String getId() {
 		return id;
 	}

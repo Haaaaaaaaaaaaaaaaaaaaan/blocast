@@ -5,7 +5,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
 </script>
@@ -13,8 +13,9 @@
 <style>
 </style>
 <script>
-$(document).ready(
-		);
+$(document).ready(function(){
+
+});
 </script>
 
 <div class="container">
@@ -37,9 +38,9 @@ $(document).ready(
           </div>
           <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
             <div class="card-body">
-              <a href="blockchainday01.bc">day01</a><br>
-              <a href="blockchainday02.bc">day02</a><br>
-              <a href="blockchainday03.bc">day03</a><br>
+              <a href="blockchainday01.bc" id="day01">day01</a><br>
+              <a href="blockchainday02.bc" id="day02">day02</a><br>
+              <a href="blockchainday03.bc" id="day03">day03</a><br>
              </div>
           </div>
         </div>
