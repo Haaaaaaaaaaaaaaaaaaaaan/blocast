@@ -258,6 +258,35 @@
         </div>
         </div>
         
+                 <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+	 <div class="card">
+          <div class="card-header" role="tab" id="headingSeven">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" style="font-family: 'Nanum Gothic', sans-serif;">myspring.xml
+              </a>
+            </h5>
+          </div>
+          <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
+            <div class="card-body">
+	<xmp>
+	<?xml version="1.0" encoding="UTF-8"?>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="ltv" class="tv4.LGTV"></bean>
+	</beans>
+	</xmp>
+             </div>
+          </div>
+        </div>
+        </div>
+        
+        
+        
+        
+        
         
       		</ol>
       		<div>
