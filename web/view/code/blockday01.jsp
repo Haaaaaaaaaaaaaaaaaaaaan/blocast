@@ -149,7 +149,116 @@
         
         <div class="col-sm-8">
 			<ol class="breadcrumb">
-        		<li class="breadcrumb-item active" style="font-family: 'Nanum Gothic', sans-serif;">파일명</li>
+	 <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+	 <div class="card">
+          <div class="card-header" role="tab" id="headingFour">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="font-family: 'Nanum Gothic', sans-serif;">LGTV.java
+              </a>
+            </h5>
+          </div>
+          <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+            <div class="card-body">
+	<pre>
+	package tv;
+
+	public class LGTV {
+	public void powerOn() {
+		System.out.println("LGTV On");
+	}
+	public void powerOff() {
+		System.out.println("LGTV Off");
+	}
+	}
+	</pre>
+             </div>
+          </div>
+        </div>
+        </div>
+        
+         <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+	 <div class="card">
+          <div class="card-header" role="tab" id="headingFive">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" style="font-family: 'Nanum Gothic', sans-serif;">SAMSUNGTV.java
+              </a>
+            </h5>
+          </div>
+          <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+            <div class="card-body">
+	<pre>
+	package tv;
+
+
+	public class SamsungTV{
+	public void powerOn() {
+		System.out.println("SamsungTV On");
+	}
+	public void powerOff() {
+		System.out.println("SamsungTV Off");
+	}
+
+	}
+
+	</pre>
+             </div>
+          </div>
+        </div>
+        </div>
+        
+                 <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+	 <div class="card">
+          <div class="card-header" role="tab" id="headingSix">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix" style="font-family: 'Nanum Gothic', sans-serif;">TVUSER.java
+              </a>
+            </h5>
+          </div>
+          <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+            <div class="card-body">
+	<pre>
+	package tv4;
+
+	import org.springframework.context.support.AbstractApplicationContext;
+	import org.springframework.context.support.GenericXmlApplicationContext;
+
+	public class TVUser {
+
+	public static void main(String[] args) {
+		// 스프링 이용해서 ioc를 구현해보자(역제어)
+		// 먼저 spring container 가동
+		System.out.println("Start Application.......");
+		AbstractApplicationContext factory = new GenericXmlApplicationContext("spring.xml");
+		System.out.println("Start Bean Factory........");
+		
+		//spring에서 stv를 가져온다. 왜이러냐?
+		//여기서 new samsungtv new lgtv 할 필요가 없기 때문!
+		//맨날 새로 new 해서 만드는 뻘짓 안해도 된다.
+		TV tv = (TV)factory.getBean("stv");
+		System.out.println("Maked Bean.......");
+		tv.powerOn();
+		tv.powerOff();
+		//맨날 새로 new 해서 만드는 뻘짓 안해도 된다.
+		TV tv2 = (TV)factory.getBean("stv");
+		System.out.println("Maked Bean 2.......");
+		tv2.powerOn();
+		tv2.powerOff();
+		//myspring에 scope=singleton 해주면 tv2는 이용 안하고 tv를 두번 이용한다.
+		//scope는 컨테이너 운영의 기본 원칙임.
+		//init-method="initS" destroy-method="destroyS"
+		//lazy-init="true"
+	
+		factory.close();
+	}
+	}
+
+	</pre>
+             </div>
+          </div>
+        </div>
+        </div>
+        
+        
       		</ol>
       		<div>
       			<button type="button" class="btn btn-info btn-lg" id="upload" data-toggle="modal" data-target="#myModal">Upload</button>
