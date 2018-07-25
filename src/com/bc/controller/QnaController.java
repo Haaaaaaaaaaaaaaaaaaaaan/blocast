@@ -38,6 +38,9 @@ public class QnaController {
 	@Resource(name="aservice")
 	AService<AnswerVO, String> aservice;
 	
+	@Resource(name="aservice")
+	Service<AnswerVO, String> aservice2;
+	
 	@Resource(name="qservice")
 	QService<QuestionVO, String> qservice;
 	
@@ -252,31 +255,79 @@ public class QnaController {
 	}
 	
 	// get answer list where question_id is given
-		@RequestMapping("/alist.bc")
-		@ResponseBody
-		public void answerlist(@RequestParam(value = "qid") String qid, HttpServletResponse response) throws Exception {
-			response.setContentType("text/json;charset=utf-8");
-			PrintWriter out = response.getWriter();
-			JSONArray ja = new JSONArray();
-			
-			ArrayList<AnswerVO> alist = new ArrayList<>();
-			alist.addAll(aservice.getqid(qid));
-			
-			for(AnswerVO a : alist) {
+	@RequestMapping("/alist.bc")
+	@ResponseBody
+	public void answerlist(@RequestParam(value = "qid") String qid, HttpServletResponse response) throws Exception {
+		response.setContentType("text/json;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		JSONArray ja = new JSONArray();
+
+		ArrayList<AnswerVO> alist = new ArrayList<>();
+		alist.addAll(aservice.getqid(qid));
+		if (alist.size() == 0) {
+			JSONObject jo = new JSONObject();
+			jo.put("qid", qid);
+			ja.add(jo);
+		} else {
+			for (AnswerVO a : alist) {
 				JSONObject jo = new JSONObject();
 				jo.put("id", a.getId());
-				jo.put("qid", a.getQuestion_id());
+				jo.put("qid", qid);
 				jo.put("author", a.getAuthor());
 				jo.put("contents", a.getContent());
 				jo.put("regdate", a.getRegdate().toString());
 				ja.add(jo);
 			}
-
-			out.println(ja.toJSONString());
-
-			out.close();
 		}
+
+		out.println(ja.toJSONString());
+
+		out.close();
+	}
 	
+	
+	@RequestMapping("/answer.bc")
+	@ResponseBody
+	public void answer(
+			@RequestParam(value = "qid") String qid,
+			@RequestParam(value = "author") String author,
+			@RequestParam(value = "content") String content,
+			HttpServletResponse response) throws Exception {
+		response.setContentType("text/json;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		JSONArray ja = new JSONArray();
+		
+		AnswerVO ans = new AnswerVO();
+		ans.setQuestion_id(qid);
+		ans.setAuthor(author);
+		ans.setContent(content);
+		
+		aservice2.register(ans);
+
+		ArrayList<AnswerVO> alist = new ArrayList<>();
+		alist.addAll(aservice.getqid(qid));
+		if (alist.size() == 0) {
+			JSONObject jo = new JSONObject();
+			jo.put("qid", qid);
+			ja.add(jo);
+		} else {
+			for (AnswerVO a : alist) {
+				JSONObject jo = new JSONObject();
+				jo.put("id", a.getId());
+				jo.put("qid", qid);
+				jo.put("author", a.getAuthor());
+				jo.put("contents", a.getContent());
+				jo.put("regdate", a.getRegdate().toString());
+				ja.add(jo);
+			}
+		}
+
+		out.println(ja.toJSONString());
+
+		out.close();
+	}
+	
+
 	@RequestMapping("/qsearch.bc")
 	public ModelAndView qsearch(HttpServletRequest request) {
 		String keyword = request.getParameter("keyword");

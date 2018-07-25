@@ -12,10 +12,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM ANSWER WHERE AUTHOR=#{obj}
 	</select>
 	<select id="selectqid" parameterType="String" resultType="answer">
-		SELECT * FROM ANSWER WHERE QUESTION_ID=#{obj}
+		SELECT * FROM ANSWER WHERE QUESTION_ID=#{obj} ORDER BY ID
 	</select>
 	<select id="selectall" resultType="answer">
-		SELECT * FROM ANSWER
+		SELECT * FROM ANSWER ORDER BY ID
 	</select>
 	<insert id="insert" parameterType="answer">
 		INSERT INTO ANSWER VALUES (ANSWER_ID_SEQ.NEXTVAL,SYSDATE,#{author},#{question_id},#{content},#{thumbsup},#{imgname1, jdbcType=VARCHAR},#{imgname2, jdbcType=VARCHAR},#{imgname3, jdbcType=VARCHAR})    

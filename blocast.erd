@@ -443,7 +443,7 @@
                         <constraint>
                           <height>-1</height>
                           <width>-1</width>
-                          <x>853</x>
+                          <x>838</x>
                           <y>316</y>
                         </constraint>
                         <sourceConnections>
@@ -947,8 +947,13 @@
               <net.java.amateras.db.visual.model.ColumnModel>
                 <columnName>TITLE</columnName>
                 <logicalName>TITLE</logicalName>
-                <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../../sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel[2]/target/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source/columns/net.java.amateras.db.visual.model.ColumnModel[3]/columnType"/>
-                <size>20</size>
+                <columnType class="net.java.amateras.db.dialect.ColumnType">
+                  <name>VARCHAR2</name>
+                  <logicalName>String</logicalName>
+                  <supportSize>true</supportSize>
+                  <type>12</type>
+                </columnType>
+                <size>200</size>
                 <notNull>true</notNull>
                 <primaryKey>false</primaryKey>
                 <description></description>
