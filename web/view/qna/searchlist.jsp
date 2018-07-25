@@ -172,16 +172,16 @@
 <div class="container">
 
 	<!-- Page Heading/Breadcrumbs -->
-	<h1 class="mt-4 mb-3">
-		QnA <small>검색결과 보여드릴게요~!</small>
-	</h1>
+	<ol class="breadcrumb">
+			<li class="breadcrumb-item active">QnA - 검색 결과입니다.</li>
+	</ol>
 
 	<div class="col">
-		<div class="input-group">
+		<div class="input-group form-inline breadcrumb">
 			<form action="qsearch.bc">
 				<input type="text" class="form-control" name="keyword" placeholder="또 검색해보세요!"> 
 				<span class="input-group-btn">
-					<button class="btn btn-default search">검색하기</button>
+					<button class="btn btn-success search">검색하기</button>
 				</span>
 			</form>
 		</div>

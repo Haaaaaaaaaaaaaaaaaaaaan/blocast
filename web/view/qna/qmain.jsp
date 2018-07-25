@@ -8,6 +8,7 @@
 }
 .tagbtn { cursor: pointer; }
 </style>
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding" rel="stylesheet">
 <script>
 	$(document).ready(function() {
 		
@@ -218,29 +219,9 @@
 <!-- Page Content -->
 <div class="container">
 
-	<!-- Page Heading/Breadcrumbs -->
-	<h1 class="mt-4 mb-3">
-		QnA <small>Ask Anything!</small>
-	</h1>
 	
 	<ol class="breadcrumb">
-		<div class="row">
-			<div class="col-md-9">
-				<div class="input-group">
-					<form class="search-form" action="qsearch.bc">
-						<input type="text" class="form-control" name="keyword" placeholder="먼저 검색해보세요!">
-						<span class="input-group-btn">
-							<button class="btn btn-default search")>검색하기</button>
-						</span>
-					</form>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="input-group">
-						<button class="btn btn-default qbtn" type="button">질문하기</button>
-				</div>
-			</div>
-		</div>
+			<li class="breadcrumb-item active">QnA - 무엇이든 물어보고 답하세요.</li>
 	</ol>
 	
 
@@ -249,6 +230,21 @@
   <!-- Sidebar Column -->
   <div class="col-md-3 mb-4">
     <div class="list-group">
+    					<div class="card mb-4">
+						<h5 class="card-header">Search</h5>
+						<div class="card-body">
+							<div class="input-group">
+								<form class="search-form" action="qsearch.bc">
+									<input type="text" class="form-control" name="keyword"
+										placeholder="먼저 검색해보세요!"> <span
+										class="input-group-btn">
+										<button class="btn btn-success search">검색하기</button>
+									</span>
+								</form>
+							</div>
+						</div>
+					</div>
+	  <button class="btn btn-danger qbtn" type="button">질문하기</button>
       <button class="list-group-item cname" name="1">블록체인</button>
       <button class="list-group-item cname" name="2">빅데이터</button>
       <button class="list-group-item cname" name="3">IOT</button>
@@ -259,10 +255,8 @@
    
   </div>
 </div>
-	
 
 </div>
-
 
 
 	
