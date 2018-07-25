@@ -307,7 +307,9 @@ public class QnaController {
 			
 		}else {
 			try {
+				//String a = new String(keyword.getBytes(),"EUC-KR");
 				qlist = qservice.getNameCont(keyword);
+				System.out.println("keyword:"+ keyword);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

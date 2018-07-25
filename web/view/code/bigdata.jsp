@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <style></style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -18,9 +18,9 @@ $(document).ready(function(){
 <div class="row">
   <div class="col-sm-4">
   	<ul>
-		<li><a href="blockchain.bc">ºí·ÏÃ¼ÀÎ Àü¹®°¡</a></li>
-		<li><a href="bigdata.bc">ºòµ¥ÀÌÅÍ ºÐ¼® ºÐ¼®°¡</a></li>
-		<li><a href="iot.bc">IOT °³¹ß Àü¹®°¡</a></li>
+		<li><a href="blockchain.bc">ë¸”ë¡ì²´ì¸ ì „ë¬¸ê°€</a></li>
+		<li><a href="bigdata.bc">ë¹…ë°ì´í„° ë¶„ì„ ë¶„ì„ê°€</a></li>
+		<li><a href="iot.bc">IOT ê°œë°œ ì „ë¬¸ê°€</a></li>
 	</ul>
   </div>
   <div class="col-sm-8">

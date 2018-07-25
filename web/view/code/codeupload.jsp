@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
 pre {
@@ -32,10 +32,10 @@ $(document).ready(function(){
 				   'filename': filename
 			},
 			success:function(data){
-				alert("¾÷·Îµå ¼º°ø");
+				alert("ì—…ë¡œë“œ ì„±ê³µ");
 			},
 			error:function(err){
-                alert("ajaxÅë½Å ½ÇÆĞ!!!");
+                alert("ajaxí†µì‹  ì‹¤íŒ¨!!!");
                 console.log(err);
             },
 			dataType: 'json'
@@ -47,9 +47,9 @@ $(document).ready(function(){
 <body>
 <input type="file" id="getfile" accept="text/*">
 <input type="hidden" id="filename" name="filename" value="" />
-<button id="upload">¾÷·Îµå</button>
+<button id="upload">ì—…ë¡œë“œ</button>
 <pre id="preview" contenteditable="true" spellcheck="false">
-¼Ò½ºÄÚµå ÀÔ·Â 
+ì†ŒìŠ¤ì½”ë“œ ì…ë ¥ 
 </pre>
 </body>
 </html>
@@ -57,10 +57,10 @@ $(document).ready(function(){
 var file = document.querySelector('#getfile');
 file.onchange = function () { 
     var fileList = file.files ;
-    // ÀĞ±â
+    // ì½ê¸°
     var reader = new FileReader();
     reader.readAsText(fileList [0],"euc-kr");
-    //·Îµå ÇÑ ÈÄ
+    //ë¡œë“œ í•œ í›„
     reader.onload = function  () {
         document.querySelector('#preview').textContent = reader.result ;
     }; 

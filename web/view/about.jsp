@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -9,7 +9,7 @@
 <!DOCTYPE>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 </head>
 <body>
     <!-- Page Content -->
@@ -17,7 +17,7 @@
 
       <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3" style="color:black; font-family: 'Nanum Gothic', sans-serif;">ABOUT
-        <small style="color:black; font-family: 'Nanum Gothic', sans-serif;">1Á¶ÀÇ ÈÇ¸¢ÇÑ °³¹ßÀÚµé¿¡ ´ëÇÏ¿©.</small>
+        <small style="color:black; font-family: 'Nanum Gothic', sans-serif;">1ì¡°ì˜ í›Œë¥­í•œ ê°œë°œìžë“¤ì— ëŒ€í•˜ì—¬.</small>
       </h1>
 
       <ol class="breadcrumb">
@@ -33,9 +33,9 @@
           <img class="img-fluid rounded mb-4" src="img/all.jpg" alt="">
         </div>
         <div class="col-lg-6">
-          <h2>1Á¶</h2>
-          <h4 style="color:black; font-family: 'Nanum Gothic', sans-serif;">´õ ÇÐ±¸¿­ ºÒÅ¸´Â ¸ÖÆ¼Ä·ÆÛ½º¸¦ ¸¸µé¾î°©´Ï´Ù.</h4><br>
-          <p>¸ÖÆ¼Ä·ÆÛ½ºÀÇ ¸ðµç ¹ÝµéÀÌ ÇÐ¾÷¿¡ ´õ¿í ¿­Á¤ÀûÀ¸·Î ¸ÅÁøÇÒ ¼ö ÀÖµµ·Ï ¸¸µé°Ú½À´Ï´Ù. °¢ÀÚ ¹ÝÀÇ ¼ö¾÷ ³»¿ëÀ» °øÀ¯ÇÏ°í, ¼­·Î Áú´äÇÒ ¼ö ÀÖ´Â ÆäÀÌÁöÀÔ´Ï´Ù. ÀÌ ÇÁ·ÎÁ§Æ®´Â ºí·ÏÃ¼ÀÎ ±â¹Ý ÇÉÅ×Å© Àü¹®°¡ °úÁ¤ÀÇ 4¹øÂ° ÇÁ·ÎÁ§Æ®·Î ÁøÇàµÇ¾úÀ¸¸ç, Java, JavaScript, Sql, Ajax, JQuery, Spring, MyBatis, Html, Css3 µîÀÌ »ç¿ëµÇ¾ú½À´Ï´Ù.</p>
+          <h2>1ì¡°</h2>
+          <h4 style="color:black; font-family: 'Nanum Gothic', sans-serif;">ë” í•™êµ¬ì—´ ë¶ˆíƒ€ëŠ” ë©€í‹°ìº í¼ìŠ¤ë¥¼ ë§Œë“¤ì–´ê°‘ë‹ˆë‹¤.</h4><br>
+          <p>ë©€í‹°ìº í¼ìŠ¤ì˜ ëª¨ë“  ë°˜ë“¤ì´ í•™ì—…ì— ë”ìš± ì—´ì •ì ìœ¼ë¡œ ë§¤ì§„í•  ìˆ˜ ìžˆë„ë¡ ë§Œë“¤ê² ìŠµë‹ˆë‹¤. ê°ìž ë°˜ì˜ ìˆ˜ì—… ë‚´ìš©ì„ ê³µìœ í•˜ê³ , ì„œë¡œ ì§ˆë‹µí•  ìˆ˜ ìžˆëŠ” íŽ˜ì´ì§€ìž…ë‹ˆë‹¤. ì´ í”„ë¡œì íŠ¸ëŠ” ë¸”ë¡ì²´ì¸ ê¸°ë°˜ í•€í…Œí¬ ì „ë¬¸ê°€ ê³¼ì •ì˜ 4ë²ˆì§¸ í”„ë¡œì íŠ¸ë¡œ ì§„í–‰ë˜ì—ˆìœ¼ë©°, Java, JavaScript, Sql, Ajax, JQuery, Spring, MyBatis, Html, Css3 ë“±ì´ ì‚¬ìš©ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
         </div>
       </div>
       <!-- /.row -->
@@ -48,9 +48,9 @@
           <div class="card h-75 text-center">
             <img class="card-img-top" src="img/ys.jpg" alt="">
             <div class="card-body">
-              <h4 class="card-title" style="color:black; font-family: 'Nanum Gothic', sans-serif;">Á¤¿ë¼ö</h4>
-              <h6 class="card-subtitle mb-2 text-muted" style="color:black; font-family: 'Nanum Gothic', sans-serif;">¼ö¼® °³¹ßÀÚ</h6>
-              <p class="card-text" style="color:black; font-family: 'Nanum Gothic', sans-serif;">87³â»ê °³¹ßÀÚ. °Ô½ÃÆÇ ±â´ÉÀ» ¸¸µé±â À§ÇØ ¿À´Ãµµ °í±ººÐÅõÇÏ°í ÀÖ´Ù.</p>
+              <h4 class="card-title" style="color:black; font-family: 'Nanum Gothic', sans-serif;">ì •ìš©ìˆ˜</h4>
+              <h6 class="card-subtitle mb-2 text-muted" style="color:black; font-family: 'Nanum Gothic', sans-serif;">ìˆ˜ì„ ê°œë°œìž</h6>
+              <p class="card-text" style="color:black; font-family: 'Nanum Gothic', sans-serif;">87ë…„ì‚° ê°œë°œìž. ê²Œì‹œíŒ ê¸°ëŠ¥ì„ ë§Œë“¤ê¸° ìœ„í•´ ì˜¤ëŠ˜ë„ ê³ êµ°ë¶„íˆ¬í•˜ê³  ìžˆë‹¤.</p>
             </div>
             <div class="card-footer">
               <a href="#">confortblack@naver.com</a>
@@ -61,9 +61,9 @@
           <div class="card h-75 text-center">
             <img class="card-img-top" src="img/bs.jpg" alt="">
             <div class="card-body">
-              <h4 class="card-title" style="color:black; font-family: 'Nanum Gothic', sans-serif;">ºó»ê¼Û</h4>
-              <h6 class="card-subtitle mb-2 text-muted" style="color:black; font-family: 'Nanum Gothic', sans-serif;">DB °ü¸® ÆÀÀå</h6>
-              <p class="card-text" style="color:black; font-family: 'Nanum Gothic', sans-serif;">91³â»ê °³¹ßÀÚ. ±×°¡ °ü¸®ÇÏ´Â DB´Â »ïÁß º¸°üµÇ¸ç, Å©·Î½º Ã¼Å·ÀÌ ³Ê¹«³ª ¿Ïº®ÇØ¼­ 100³â µÚÀÇ ÈÄ´ë¿¡°Ôµµ ÀüÇØÁú ¼ö ÀÖ´Ù°í ÇÑ´Ù.</p>
+              <h4 class="card-title" style="color:black; font-family: 'Nanum Gothic', sans-serif;">ë¹ˆì‚°ì†¡</h4>
+              <h6 class="card-subtitle mb-2 text-muted" style="color:black; font-family: 'Nanum Gothic', sans-serif;">DB ê´€ë¦¬ íŒ€ìž¥</h6>
+              <p class="card-text" style="color:black; font-family: 'Nanum Gothic', sans-serif;">91ë…„ì‚° ê°œë°œìž. ê·¸ê°€ ê´€ë¦¬í•˜ëŠ” DBëŠ” ì‚¼ì¤‘ ë³´ê´€ë˜ë©°, í¬ë¡œìŠ¤ ì²´í‚¹ì´ ë„ˆë¬´ë‚˜ ì™„ë²½í•´ì„œ 100ë…„ ë’¤ì˜ í›„ëŒ€ì—ê²Œë„ ì „í•´ì§ˆ ìˆ˜ ìžˆë‹¤ê³  í•œë‹¤.</p>
             </div>
             <div class="card-footer">
               <a href="#">binsansong@gmail.com</a>
@@ -74,9 +74,9 @@
           <div class="card h-75 text-center">
             <img class="card-img-top" src="img/ny.jpg" alt="">
             <div class="card-body">
-              <h4 class="card-title" style="color:black; font-family: 'Nanum Gothic', sans-serif;">ÇÑ³ª¿µ</h4>
-              <h6 class="card-subtitle mb-2 text-muted" style="color:black; font-family: 'Nanum Gothic', sans-serif;">¸·³»</h6>
-              <p class="card-text" style="color:black; font-family: 'Nanum Gothic', sans-serif;">¸·³» °³¹ßÀÚ. ¸·³»Áö¸¸ ±×¿¡ °É¸ÂÁö ¾Ê°Ô ¶Ù¾î³­ ½Ç·ÂÀ¸·Î ÆÀÀ» ¸®µåÇÏ°í ÀÖ´Ù.</p>
+              <h4 class="card-title" style="color:black; font-family: 'Nanum Gothic', sans-serif;">í•œë‚˜ì˜</h4>
+              <h6 class="card-subtitle mb-2 text-muted" style="color:black; font-family: 'Nanum Gothic', sans-serif;">ë§‰ë‚´</h6>
+              <p class="card-text" style="color:black; font-family: 'Nanum Gothic', sans-serif;">ë§‰ë‚´ ê°œë°œìž. ë§‰ë‚´ì§€ë§Œ ê·¸ì— ê±¸ë§žì§€ ì•Šê²Œ ë›°ì–´ë‚œ ì‹¤ë ¥ìœ¼ë¡œ íŒ€ì„ ë¦¬ë“œí•˜ê³  ìžˆë‹¤.</p>
             </div>
             <div class="card-footer">
               <a href="#">hannayoung@naver.com</a>
@@ -87,9 +87,9 @@
           <div class="card h-75 text-center">
             <img class="card-img-top" src="img/hy.jpg" alt="">
             <div class="card-body">
-              <h4 class="card-title" style="color:black; font-family: 'Nanum Gothic', sans-serif;">±èÇÑ¿­</h4>
-              <h6 class="card-subtitle mb-2 text-muted" style="color:black; font-family: 'Nanum Gothic', sans-serif;">¼ö¼® µðÀÚÀÌ³Ê</h6>
-              <p class="card-text" style="color:black; font-family: 'Nanum Gothic', sans-serif;">91³â»ê °³¹ßÀÚ. UI¸¦ µµ¸Ã¾Æ ¿­½ÉÈ÷ ÆÀÀ» µ½´Â´Ù.</p>
+              <h4 class="card-title" style="color:black; font-family: 'Nanum Gothic', sans-serif;">ê¹€í•œì—´</h4>
+              <h6 class="card-subtitle mb-2 text-muted" style="color:black; font-family: 'Nanum Gothic', sans-serif;">ìˆ˜ì„ ë””ìžì´ë„ˆ</h6>
+              <p class="card-text" style="color:black; font-family: 'Nanum Gothic', sans-serif;">91ë…„ì‚° ê°œë°œìž. UIë¥¼ ë„ë§¡ì•„ ì—´ì‹¬ížˆ íŒ€ì„ ë•ëŠ”ë‹¤.</p>
             </div>
             <div class="card-footer">
               <a href="#">gksduf06@naver.com</a>

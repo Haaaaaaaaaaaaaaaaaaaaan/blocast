@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -12,7 +12,7 @@ var resultt = "<%=(String)request.getAttribute("resultt")%>"
 
 if(resultt != 'null') {
 	if(resultt == 'asdf') {
-		alert("id È¤Àº password°¡ Æ²·È½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
+		alert("id í˜¹ì€ passwordê°€ í‹€ë ¸ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
 	}
 }
 </script>
@@ -64,9 +64,9 @@ $(this).prev().attr('type', function(index, attr){return attr == 'password' ? 't
     
         function openChild()
         {
-            // window.name = "ºÎ¸ğÃ¢ ÀÌ¸§"; 
+            // window.name = "ë¶€ëª¨ì°½ ì´ë¦„"; 
             window.name = "parentForm";
-            // window.open("openÇÒ window", "ÀÚ½ÄÃ¢ ÀÌ¸§", "ÆË¾÷Ã¢ ¿É¼Ç");
+            // window.open("opení•  window", "ìì‹ì°½ ì´ë¦„", "íŒì—…ì°½ ì˜µì…˜");
             openWin = window.open("email.bc",
                     "childForm", "width=570, height=350, resizable = no, scrollbars = no");
         }
@@ -115,7 +115,7 @@ $(this).prev().attr('type', function(index, attr){return attr == 'password' ? 't
 			</div>
 			<br>
 			<div>
-			<input class="form-control" type="button" value="¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ ÀØ¾î¹ö¸®¼Ì³ª¿ä?" onclick="openChild()"><br>
+			<input class="form-control" type="button" value="ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ ìŠì–´ë²„ë¦¬ì…¨ë‚˜ìš”?" onclick="openChild()"><br>
 			</div>
 			<br>
 			

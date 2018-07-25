@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -10,7 +10,7 @@ var resultt = "<%=(String)request.getAttribute("resultt")%>"
 
 if(resultt != 'null') {
 	if(resultt == 'asdd') {
-		alert("ÀÌ¹Ì ÀÖ´Â id ÀÔ´Ï´Ù. ´Ù¸¥ °ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ì´ë¯¸ ìˆëŠ” id ì…ë‹ˆë‹¤. ë‹¤ë¥¸ ê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 	}
 }
 </script>
@@ -60,7 +60,7 @@ $(this).prev().attr('type', function(index, attr){return attr == 'password' ? 't
         var pwck = document.getElementById("PwCheck").value;
  
         if (pw != pwck) {
-            document.getElementById("pwsame").innerHTML = 'ºñ¹Ğ¹øÈ£°¡ Æ²·È½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä';
+            document.getElementById("pwsame").innerHTML = 'ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ ì£¼ì„¸ìš”';
             return false;
         }
     }

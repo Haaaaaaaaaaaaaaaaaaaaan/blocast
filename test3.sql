@@ -13,6 +13,8 @@ select * from question;
 select * from TAG;
 delete from TAG;
 delete from TAGLIST;
+
+select * from TAGLIST;
 delete from QUESTION;
 
 DROP 

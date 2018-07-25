@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <style>
@@ -14,7 +14,7 @@
 			e.preventDefault();
 			var keyword = $('[name=keyword]').val();
 			if(keyword==''){
-				alert('°Ë»ö¾î¸¦ ÀÔ·ÂÇÏÁö ¾ÊÀ¸¼Ì¾î¿ä!');
+				alert('ê²€ìƒ‰ì–´ë¥¼ ì…ë ¥í•˜ì§€ ì•Šìœ¼ì…¨ì–´ìš”!');
 				return;
 			}
 			$('form').submit();
@@ -42,7 +42,7 @@
 				result+=$(this).attr('contents');
 				result+='</div>';//card-body
 				result+='</div>';//collapse
-				result+='<div class="card-footer text-muted">ÀÛ¼ºÀÚ : ';
+				result+='<div class="card-footer text-muted">ì‘ì„±ì : ';
 				result+=$(this).attr('regdate');
 				result+='</div>';//card-footer
 				result+='</div>';//card
@@ -68,15 +68,15 @@
 
 	<!-- Page Heading/Breadcrumbs -->
 	<h1 class="mt-4 mb-3">
-		QnA <small>°Ë»ö°á°ú º¸¿©µå¸±°Ô¿ä~!</small>
+		QnA <small>ê²€ìƒ‰ê²°ê³¼ ë³´ì—¬ë“œë¦´ê²Œìš”~!</small>
 	</h1>
 
 	<div class="col">
 		<div class="input-group">
 			<form action="qsearch.bc">
-				<input type="text" class="form-control" name="keyword" placeholder="¶Ç °Ë»öÇØº¸¼¼¿ä!"> 
+				<input type="text" class="form-control" name="keyword" placeholder="ë˜ ê²€ìƒ‰í•´ë³´ì„¸ìš”!"> 
 				<span class="input-group-btn">
-					<button class="btn btn-default search">°Ë»öÇÏ±â</button>
+					<button class="btn btn-default search">ê²€ìƒ‰í•˜ê¸°</button>
 				</span>
 			</form>
 		</div>
@@ -85,8 +85,8 @@
 	<!-- Content Row -->
 	<div class="col mb-4 qnas" id="accordion" role="tablist" aria-multiselectable="true">
 	<c:if test="${fn:length(qlist) == 0}">
-		°Ë»ö°á°ú°¡ ¾ø¾î¿ä¤Ğ¤Ğ Áú¹®À» µî·ÏÇÏ½Ç·¡¿ä?<br>
-		<button class="btn btn-default qbtn" type="button">Áú¹®ÇÏ±â</button>
+		ê²€ìƒ‰ê²°ê³¼ê°€ ì—†ì–´ìš”ã… ã…  ì§ˆë¬¸ì„ ë“±ë¡í•˜ì‹¤ë˜ìš”?<br>
+		<button class="btn btn-default qbtn" type="button">ì§ˆë¬¸í•˜ê¸°</button>
 	</c:if>
 	
 	<c:forEach var="question" items="${qlist}">
@@ -98,7 +98,7 @@
 			<div id="c" class="collapse" role="tabpanel">
 				<div class="card-body">${question.contents}</div>
 			</div>
-			<div class="card-footer text-muted">ÀÛ¼ºÀÏ : </div>
+			<div class="card-footer text-muted">ì‘ì„±ì¼ : </div>
 		</div>
 	</c:forEach>
 	</div>

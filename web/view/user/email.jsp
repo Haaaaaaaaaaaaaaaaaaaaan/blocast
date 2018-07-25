@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -52,10 +52,10 @@ var resultt = "<%=(String)request.getAttribute("resultt")%>"
 
 if(resultt != 'null') {
 	if(resultt == 'asdf') {
-		alert("id È¤Àº  emailÀÌ Æ²·È½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
+		alert("id í˜¹ì€  emailì´ í‹€ë ¸ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
 	}
 	if(resultt == 'asdd') {
-		alert("id¿Í  pwd°¡ email·Î º¸³»Á³½À´Ï´Ù. È®ÀÎÇÏ¼¼¿ä.");
+		alert("idì™€  pwdê°€ emailë¡œ ë³´ë‚´ì¡ŒìŠµë‹ˆë‹¤. í™•ì¸í•˜ì„¸ìš”.");
 	}
 }
 </script>

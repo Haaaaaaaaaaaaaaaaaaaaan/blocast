@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,19 +19,19 @@
           <!-- Slide One - Set the background image for this slide in the line below -->
           <div class="carousel-item active" style="background-image: url('img/blockchain.png')">
             <div class="carousel-caption d-none d-md-block" style="color:black; font-family: 'Nanum Gothic', sans-serif;">
-              <p>ÀÌÁ¦, ÄÚµå¸¦ ¾îµð¼­³ª È®ÀÎÇÏ°í Áú´äÇÏ¼¼¿ä.</p>
+              <p>ì´ì œ, ì½”ë“œë¥¼ ì–´ë””ì„œë‚˜ í™•ì¸í•˜ê³  ì§ˆë‹µí•˜ì„¸ìš”.</p>
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
           <div class="carousel-item" style="background-image: url('img/bigdata.png')">
             <div class="carousel-caption d-none d-md-block" style="color:black; font-family: 'Nanum Gothic', sans-serif;">
-              <p>¼­·Î ¸ð¸£´Â ºÎºÐÀ» È®ÀÎÇÏ°í ´äÇØÁÖ¸ç ½Ç·ÂÀ» Çâ»ó½ÃÅ°¼¼¿ä.</p>
+              <p>ì„œë¡œ ëª¨ë¥´ëŠ” ë¶€ë¶„ì„ í™•ì¸í•˜ê³  ë‹µí•´ì£¼ë©° ì‹¤ë ¥ì„ í–¥ìƒì‹œí‚¤ì„¸ìš”.</p>
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
           <div class="carousel-item" style="background-image: url('img/iot.png')">
             <div class="carousel-caption d-none d-md-block" style="color:black; font-family: 'Nanum Gothic', sans-serif;">
-              <p>È¥ÀÚ¼­ °³¹ßÇÏ±â Èûµé´Ù±¸¿ä? ¼­·Î µµ¿òÀÌ µÇ¾îÁÖ¼¼¿ä!</p>
+              <p>í˜¼ìžì„œ ê°œë°œí•˜ê¸° íž˜ë“¤ë‹¤êµ¬ìš”? ì„œë¡œ ë„ì›€ì´ ë˜ì–´ì£¼ì„¸ìš”!</p>
             </div>
           </div>
         </div>
@@ -49,40 +49,40 @@
     <!-- Page Content -->
     <div class="container">
 	
-      <h2 class="my-4" style="font-family: 'Nanum Gothic', sans-serif;"><div style="text-align:center;">¸ÖÆ¼Ä·ÆÛ½º <span style="font-weight:bold; color:#1D6A96;">BLOCAST</span>¿¡ ¿À½Å °ÍÀ» È¯¿µÇÕ´Ï´Ù!</div></h2>
+      <h2 class="my-4" style="font-family: 'Nanum Gothic', sans-serif;"><div style="text-align:center;">ë©€í‹°ìº í¼ìŠ¤ <span style="font-weight:bold; color:#1D6A96;">BLOCAST</span>ì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤!</div></h2>
 
       <!-- Marketing Icons Section -->
       <div class="row">
         <div class="col-lg-4 mb-4">
           <div class="card h-50">
-            <h4 class="card-header" style="font-family: 'Nanum Gothic Coding', monospace;">ºí·ÏÃ¼ÀÎ Àü¹®°¡</h4>
+            <h4 class="card-header" style="font-family: 'Nanum Gothic Coding', monospace;">ë¸”ë¡ì²´ì¸ ì „ë¬¸ê°€</h4>
             <div class="card-body">
-              <p class="card-text">Java, SQL, Spring, Jquery, Ajax, Spring, Linux, Blockchain Infra µî ¼ö¾÷¿¡¼­ ¹è¿î ´Ù¾çÇÑ ÄÚµå¸¦ ¾÷·ÎµåÇÏ°í È®ÀÎÇÏ¼¼¿ä.</p>
+              <p class="card-text">Java, SQL, Spring, Jquery, Ajax, Spring, Linux, Blockchain Infra ë“± ìˆ˜ì—…ì—ì„œ ë°°ìš´ ë‹¤ì–‘í•œ ì½”ë“œë¥¼ ì—…ë¡œë“œí•˜ê³  í™•ì¸í•˜ì„¸ìš”.</p>
             </div>
             <div class="card-footer">
-              <a href="blockchainday01.bc" class="btn btn-primary">ÄÚµå º¸·¯ °¡±â</a>
+              <a href="blockchainday01.bc" class="btn btn-primary">ì½”ë“œ ë³´ëŸ¬ ê°€ê¸°</a>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-4">
           <div class="card h-50">
-            <h4 class="card-header" style="font-family: 'Nanum Gothic Coding', monospace;">ºòµ¥ÀÌÅÍ ºÐ¼® ºÐ¼®°¡</h4>
+            <h4 class="card-header" style="font-family: 'Nanum Gothic Coding', monospace;">ë¹…ë°ì´í„° ë¶„ì„ ë¶„ì„ê°€</h4>
             <div class="card-body">
-              <p class="card-text">¼ö¾÷¿¡¼­ ¹è¿î R, Python, Agile µî ¿©·¯ ÇÁ·Î±×·¡¹Ö, ÀÀ¿ë SW ±â¼úÀÇ ÄÚµå¸¦ È®ÀÎÇÏ°í ºòµ¥ÀÌÅÍ ½Ç·Â Çâ»óÀ» À§ÇØ ¼­·Î ºÐ¼® ½ºÅ³À» °øÀ¯, Áú´äÇÏ¼¼¿ä!</p>
+              <p class="card-text">ìˆ˜ì—…ì—ì„œ ë°°ìš´ R, Python, Agile ë“± ì—¬ëŸ¬ í”„ë¡œê·¸ëž˜ë°, ì‘ìš© SW ê¸°ìˆ ì˜ ì½”ë“œë¥¼ í™•ì¸í•˜ê³  ë¹…ë°ì´í„° ì‹¤ë ¥ í–¥ìƒì„ ìœ„í•´ ì„œë¡œ ë¶„ì„ ìŠ¤í‚¬ì„ ê³µìœ , ì§ˆë‹µí•˜ì„¸ìš”!</p>
             </div>
             <div class="card-footer">
-              <a href="bigdatanocode.bc" class="btn btn-primary">ÄÚµå º¸·¯ °¡±â</a>
+              <a href="bigdatanocode.bc" class="btn btn-primary">ì½”ë“œ ë³´ëŸ¬ ê°€ê¸°</a>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-4">
           <div class="card h-50">
-            <h4 class="card-header" style="font-family: 'Nanum Gothic Coding', monospace;">IOT °³¹ß Àü¹®°¡</h4>
+            <h4 class="card-header" style="font-family: 'Nanum Gothic Coding', monospace;">IOT ê°œë°œ ì „ë¬¸ê°€</h4>
             <div class="card-body">
-              <p class="card-text">Python, ¿ìºÐÅõ ¸®´ª½º, ¾îÇÃ¸®ÄÉÀÌ¼Ç ¾ð¾î µî ¼ö¾÷ ³»¿ëÀÇ ÄÚµå¸¦ Ãß°¡ÇÏ°í, ¸ðµÎ¿Í ¼ÒÅëÇÏ¸ç ´õ¿í Ã¢ÀÇÀûÀÎ IoT ¼¼»óÀ» ¸¸µé¾îº¸¼¼¿ä.</p>
+              <p class="card-text">Python, ìš°ë¶„íˆ¬ ë¦¬ëˆ…ìŠ¤, ì–´í”Œë¦¬ì¼€ì´ì…˜ ì–¸ì–´ ë“± ìˆ˜ì—… ë‚´ìš©ì˜ ì½”ë“œë¥¼ ì¶”ê°€í•˜ê³ , ëª¨ë‘ì™€ ì†Œí†µí•˜ë©° ë”ìš± ì°½ì˜ì ì¸ IoT ì„¸ìƒì„ ë§Œë“¤ì–´ë³´ì„¸ìš”.</p>
             </div>
             <div class="card-footer">
-              <a href="iotnocode.bc" class="btn btn-primary">ÄÚµå º¸·¯ °¡±â</a>
+              <a href="iotnocode.bc" class="btn btn-primary">ì½”ë“œ ë³´ëŸ¬ ê°€ê¸°</a>
             </div>
           </div>
         </div>

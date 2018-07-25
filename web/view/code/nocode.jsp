@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -31,7 +31,7 @@ $(document).ready(
 	 <div class="card">
           <div class="card-header" role="tab" id="headingOne">
             <h5 class="mb-0">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="font-family: 'Nanum Gothic', sans-serif;">ºí·ÏÃ¼ÀÎ ÇÉÅ×Å© Àü¹®°¡
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="font-family: 'Nanum Gothic', sans-serif;">ë¸”ë¡ì²´ì¸ í•€í…Œí¬ ì „ë¬¸ê°€
               </a>
             </h5>
           </div>
@@ -47,13 +47,13 @@ $(document).ready(
 	 	 <div class="card">
           <div class="card-header" role="tab" id="headingTwo">
             <h5 class="mb-0">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-family: 'Nanum Gothic', sans-serif;">ºòµ¥ÀÌÅÍ ºÐ¼® Àü¹®°¡
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-family: 'Nanum Gothic', sans-serif;">ë¹…ë°ì´í„° ë¶„ì„ ì „ë¬¸ê°€
               </a>
             </h5>
           </div>
           <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
             <div class="card-body">
-              <a href="" style="font-family: 'Nanum Gothic', sans-serif;">¾ÆÁ÷ ¿Ã¶ó¿Â ÄÚµå°¡ ¾ø½À´Ï´Ù ¤Ð_¤Ð</a>
+              <a href="" style="font-family: 'Nanum Gothic', sans-serif;">ì•„ì§ ì˜¬ë¼ì˜¨ ì½”ë“œê°€ ì—†ìŠµë‹ˆë‹¤ ã… _ã… </a>
 						
               </div>
           </div>
@@ -62,12 +62,12 @@ $(document).ready(
 	     <div class="card">
           <div class="card-header" role="tab" id="headingThree">
             <h5 class="mb-0">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="font-family: 'Nanum Gothic', sans-serif;">IoT °³¹ß Àü¹®°¡</a>
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="font-family: 'Nanum Gothic', sans-serif;">IoT ê°œë°œ ì „ë¬¸ê°€</a>
             </h5>
           </div>
           <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
             <div class="card-body">
-              <a href="" style="font-family: 'Nanum Gothic', sans-serif;">¾ÆÁ÷ ¿Ã¶ó¿Â ÄÚµå°¡ ¾ø½À´Ï´Ù ¤Ð_¤Ð</a>
+              <a href="" style="font-family: 'Nanum Gothic', sans-serif;">ì•„ì§ ì˜¬ë¼ì˜¨ ì½”ë“œê°€ ì—†ìŠµë‹ˆë‹¤ ã… _ã… </a>
 						
             </div>
           </div>
@@ -87,9 +87,9 @@ $(document).ready(
             <a href="#"><img class="card-img-top" src="img/code.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">¿Ã¶ó¿Â ÄÚµå°¡ ¾ø½À´Ï´Ù.</a>
+                <a href="#">ì˜¬ë¼ì˜¨ ì½”ë“œê°€ ì—†ìŠµë‹ˆë‹¤.</a>
               </h4>
-              <p class="card-text">º»ÀÎÀ» À§ÇØ, ÇÐ¿ì¸¦ À§ÇØ ÄÚµå¸¦ °øÀ¯ÇØº¸¼¼¿ä!</p>
+              <p class="card-text">ë³¸ì¸ì„ ìœ„í•´, í•™ìš°ë¥¼ ìœ„í•´ ì½”ë“œë¥¼ ê³µìœ í•´ë³´ì„¸ìš”!</p>
             </div>
           </div>
         </div>

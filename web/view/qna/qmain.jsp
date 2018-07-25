@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <style>
 .hoverable:hover{
@@ -16,7 +16,7 @@
 			e.preventDefault();
 			var keyword = $('[name=keyword]').val();
 			if(keyword==''){
-				alert('°Ë»ö¾î¸¦ ÀÔ·ÂÇÏÁö ¾ÊÀ¸¼Ì¾î¿ä!');
+				alert('ê²€ìƒ‰ì–´ë¥¼ ì…ë ¥í•˜ì§€ ì•Šìœ¼ì…¨ì–´ìš”!');
 				return;
 			}
 			$('form').submit();
@@ -39,13 +39,13 @@
 			
 			$(answer).each(function(index){
 				result+='<div class="card">';
-				result+='<h5> ÀÛ¼ºÀÚ : ';
+				result+='<h5> ì‘ì„±ì : ';
 				result+=$(this).attr('author');
 				result+='</h5>';
 				result+='<p>';
 				result+=$(this).attr('contents');
 				result+='</p>';
-				result+='<p> ÀÛ¼ºÀÏ: ';
+				result+='<p> ì‘ì„±ì¼: ';
 				result+=$(this).attr('regdate');
 				result+='</p>';
 				result+='</div>';
@@ -64,7 +64,7 @@
 			result+='<p>';
 			result+=$(question).attr('contents');
 			result+='</p>';
-			result+='<p> ÀÛ¼ºÀÏ: ';
+			result+='<p> ì‘ì„±ì¼: ';
 			result+=$(question).attr('regdate');
 			result+='</p>';
 			
@@ -76,9 +76,9 @@
 			
 			result+='<div id="'+id+'" class="alert alert-secondary colans hoverable" role="tab" data-toggle="collapse" data-parent="#accordion" href="#ans'+id+'" aria-expanded="true" aria-controls="collapseOne">';
 			if($(question).attr('asize')==0){
-				result+='´ä±ÛÀÌ ¾ÆÁ÷ ¾ø³×¿ä, ´ä±ÛÀ» µî·Ï ÇØº¼±î¿ä?';
+				result+='ë‹µê¸€ì´ ì•„ì§ ì—†ë„¤ìš”, ë‹µê¸€ì„ ë“±ë¡ í•´ë³¼ê¹Œìš”?';
 			}else{
-				result+=$(question).attr('asize')+'°³ÀÇ ´ä±ÛÀÌ ÀÖ½À´Ï´Ù! ÆîÃÄº¼±î¿ä?';
+				result+=$(question).attr('asize')+'ê°œì˜ ë‹µê¸€ì´ ìˆìŠµë‹ˆë‹¤! í¼ì³ë³¼ê¹Œìš”?';
 			}
 			result+='</div>';
 			result+='<div id="ans'+id+'" class="collapse" role="tabpanel">';
@@ -106,7 +106,7 @@
 						collapseAnswer(data);
 					},
 					error : function(request,status,error){
- 				        alert("getAnswer AJAX ¿¡·¯¿¡¿ä!\n"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+ 				        alert("getAnswer AJAX ì—ëŸ¬ì—ìš”!\n"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 				    },
 				    dataType: 'json'
 				
@@ -133,7 +133,7 @@
 				
 				
 				result+='</div>';//collapse
-				result+='<div class="card-footer text-muted">ÀÛ¼ºÀÚ : ';
+				result+='<div class="card-footer text-muted">ì‘ì„±ì : ';
 				result+=$(this).attr('author');
 				result+='</div>';//card-footer
 				result+='</div>';//card
@@ -156,7 +156,7 @@
 						collapseCard(data);
 					},
 					error : function(request,status,error){
-// 				        alert("getTag AJAX ¿¡·¯¿¡¿ä!\n"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+// 				        alert("getTag AJAX ì—ëŸ¬ì—ìš”!\n"+"code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 				    },
 				    dataType: 'json'
 				
@@ -205,16 +205,16 @@
 			<div class="col-md-9">
 				<div class="input-group">
 					<form action="qsearch.bc">
-						<input type="text" class="form-control" name="keyword" placeholder="¸ÕÀú °Ë»öÇØº¸¼¼¿ä!">
+						<input type="text" class="form-control" name="keyword" placeholder="ë¨¼ì € ê²€ìƒ‰í•´ë³´ì„¸ìš”!">
 						<span class="input-group-btn">
-							<button class="btn btn-default search")>°Ë»öÇÏ±â</button>
+							<button class="btn btn-default search")>ê²€ìƒ‰í•˜ê¸°</button>
 						</span>
 					</form>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="input-group">
-						<button class="btn btn-default qbtn" type="button">Áú¹®ÇÏ±â</button>
+						<button class="btn btn-default qbtn" type="button">ì§ˆë¬¸í•˜ê¸°</button>
 				</div>
 			</div>
 		</div>
@@ -226,8 +226,8 @@
   <!-- Sidebar Column -->
   <div class="col-md-3 mb-4">
     <div class="list-group">
-      <button class="list-group-item cname" name="1">ºí·ÏÃ¼ÀÎ</button>
-      <button class="list-group-item cname" name="2">ºòµ¥ÀÌÅÍ</button>
+      <button class="list-group-item cname" name="1">ë¸”ë¡ì²´ì¸</button>
+      <button class="list-group-item cname" name="2">ë¹…ë°ì´í„°</button>
       <button class="list-group-item cname" name="3">IOT</button>
     </div>
   </div>
