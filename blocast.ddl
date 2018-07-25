@@ -104,7 +104,7 @@ CREATE TABLE QUESTION(
 		REGDATE                       		DATE		 NOT NULL,
 		CONTENTS                      		CLOB		 NOT NULL,
 		CLASS_ID                      		NUMBER(20)		 NOT NULL,
-		STATE                         		VARCHAR2(20)		 NOT NULL,
+		STATE                         		VARCHAR2(20)		 NULL,
 		IMGNAME1                      		VARCHAR2(20)		 NULL ,
 		IMGNAME2                      		VARCHAR2(20)		 NULL ,
 		IMGNAME3                      		VARCHAR2(20)		 NULL 
