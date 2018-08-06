@@ -100,12 +100,15 @@ public class QnaController {
 		String tag = request.getParameter("tag");
 		ArrayList<String> list1 = new ArrayList<>();
 		System.out.println("classI:" + classI);
+		System.out.println("question content log :"+content);
 		
 		QuestionVO q = new QuestionVO();
 		q.setTitle(title);
 		q.setContents(content);
 		q.setClass_id(cvo.getId());
 		q.setAuthor(session.getAttribute("loginid").toString());
+		
+		System.out.println(q);
 		//System.out.println("session.getAttribute(\"loginid\"):" + session.getAttribute("loginid"));
 
 		//question 테이블에 title과 content 입력

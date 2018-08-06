@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM QUESTION_THUMBSUP
 	</select>
 	<insert id="insert" parameterType="qthumb">
-		INSERT INTO QUESTION_THUMBSUP VALUES (QUESTION_THUMBSUP_ID_SEQ.NEXTVAL,#{question_id},#{user_id})
+		INSERT INTO QUESTION_THUMBSUP VALUES (NULL,#{question_id},#{user_id})
 	</insert>
 	<update id="update" parameterType="qthumb">
 		UPDATE QUESTION_THUMBSUP SET QUESTION_ID=#{question_id},USER_ID=#{user_id} WHERE ID=#{id}

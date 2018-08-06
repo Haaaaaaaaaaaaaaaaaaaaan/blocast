@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM ANSWER_THUMBSUP
 	</select>
 	<insert id="insert" parameterType="athumb">
-		INSERT INTO ANSWER_THUMBSUP VALUES (ANSWER_THUMBSUP_ID_SEQ.NEXTVAL,#{answer_id},#{user_id})
+		INSERT INTO ANSWER_THUMBSUP VALUES (NULL,#{answer_id},#{user_id})
 	</insert>
 	<update id="update" parameterType="athumb">
 		UPDATE ANSWER_THUMBSUP SET ANSWER_ID=#{answer_id},USER_ID=#{user_id} WHERE ID=#{id}

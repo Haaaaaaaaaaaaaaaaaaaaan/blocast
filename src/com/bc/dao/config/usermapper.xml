@@ -28,10 +28,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	
 		<choose>
 		<when test= 'id != null and id.equals("admin")'>
-			INSERT INTO USERS VALUES (#{id},#{pwd},#{name},#{gender},#{email},SYSDATE,'admin')
+			INSERT INTO USERS VALUES (#{id},#{pwd},#{name},#{gender},#{email},SYSDATE(),'admin')
 		</when>
 		<otherwise>
-			INSERT INTO USERS VALUES (#{id},#{pwd},#{name},#{gender},#{email},SYSDATE,'not admin')
+			INSERT INTO USERS VALUES (#{id},#{pwd},#{name},#{gender},#{email},SYSDATE(),'not admin')
 		</otherwise>
 		</choose>
 	</insert>

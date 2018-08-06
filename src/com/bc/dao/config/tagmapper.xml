@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 <mapper namespace="com.bc.dao.mapper.TagMapper">
 	
 	<select id="selectrecent"  resultType="tag">
-		SELECT * FROM (SELECT * FROM TAG ORDER BY ID DESC) WHERE ROWNUM=1
+		SELECT * FROM TAG ORDER BY ID DESC LIMIT 1
 	</select>
 	<select id="select" parameterType="String" resultType="tag">
 		SELECT * FROM TAG WHERE ID=#{obj}
@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM TAG where NAME like '%' ||  #{obj} || '%'
 	</select>
 	<insert id="insert" parameterType="String">
-		INSERT INTO TAG VALUES (TAG_ID_SEQ.NEXTVAL,#{name})
+		INSERT INTO TAG VALUES (NULL,#{name})
 	</insert>
 	<update id="update" parameterType="tag">
 		UPDATE TAG SET NAME=#{name} WHERE ID=#{id}

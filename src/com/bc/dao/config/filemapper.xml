@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM FILES
 	</select>
 	<insert id="insert" parameterType="files">
-		INSERT INTO FILES VALUES (FILES_ID_SEQ.NEXTVAL,#{folder_id},#{name})
+		INSERT INTO FILES VALUES (NULL,#{folder_id},#{name})
 	</insert>
 	<update id="update" parameterType="files">
 		UPDATE FILES SET FOLDER_ID=#{folder_id},NAME=#{name} WHERE ID=#{id}
