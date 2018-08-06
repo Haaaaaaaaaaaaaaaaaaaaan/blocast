@@ -10,54 +10,54 @@ DROP TABLE IF EXISTS CLASS;
 DROP TABLE IF EXISTS USERS;
 
 CREATE TABLE USERS(
-		ID                            		VARCHAR(20)		 NOT NULL		 PRIMARY KEY,
-		PWD                           		VARCHAR(20)		 NOT NULL,
-		NAME                          		VARCHAR(20)		 NOT NULL,
-		GENDER                        		VARCHAR(10)		 NOT NULL,
-		EMAIL                         		VARCHAR(20)		 NOT NULL,
+		ID                            		NVARCHAR(20)		 NOT NULL		 PRIMARY KEY,
+		PWD                           		NVARCHAR(20)		 NOT NULL,
+		NAME                          		NVARCHAR(20)		 NOT NULL,
+		GENDER                        		NVARCHAR(10)		 NOT NULL,
+		EMAIL                         		NVARCHAR(20)		 NOT NULL,
 		REGDATE                       		DATE		 NOT NULL,
-		ADMIN                         		VARCHAR(20)		 NULL 
+		ADMIN                         		NVARCHAR(20)		 NULL 
 );
 
 CREATE TABLE CLASS(
 		ID                            		MEDIUMINT(20)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT,
-		NAME                          		VARCHAR(20)		 NOT NULL,
+		NAME                          		NVARCHAR(20)		 NOT NULL,
 		REGDATE                       		DATE		 NOT NULL
 );
 
 CREATE TABLE FOLDERS(
 		ID                            		MEDIUMINT(20)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT,
 		CLASS_ID                      		MEDIUMINT(20)		 NOT NULL,
-		NAME                          		VARCHAR(20)		 NOT NULL,
+		NAME                          		NVARCHAR(20)		 NOT NULL,
   FOREIGN KEY (CLASS_ID) REFERENCES CLASS (ID)
 );
 
 CREATE TABLE FILES(
 		ID                            		MEDIUMINT(20)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT,
 		FOLDER_ID                     		MEDIUMINT(20)		 NOT NULL,
-		NAME                          		VARCHAR(20)		 NOT NULL,
+		NAME                          		NVARCHAR(20)		 NOT NULL,
   FOREIGN KEY (FOLDER_ID) REFERENCES FOLDERS (ID)
 );
 
 CREATE TABLE QUESTION(
 		ID                            		MEDIUMINT(20)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT,
-		TITLE                         		VARCHAR(200)		 NOT NULL,
-		AUTHOR                        		VARCHAR(20)		 NOT NULL,
+		TITLE                         		NVARCHAR(200)		 NOT NULL,
+		AUTHOR                        		NVARCHAR(20)		 NOT NULL,
 		THUMBSUP                      		MEDIUMINT(10)		 DEFAULT 0		 NOT NULL,
 		REGDATE                       		DATE		 NOT NULL,
 		CONTENTS                      		MEDIUMINT		 NOT NULL,
 		CLASS_ID                      		MEDIUMINT(20)		 NOT NULL,
-		STATE                         		VARCHAR(20)		 NOT NULL,
-		IMGNAME1                      		VARCHAR(20)		 NULL ,
-		IMGNAME2                      		VARCHAR(20)		 NULL ,
-		IMGNAME3                      		VARCHAR(20)		 NULL ,
+		STATE                         		NVARCHAR(20)		 NULL,
+		IMGNAME1                      		NVARCHAR(20)		 NULL ,
+		IMGNAME2                      		NVARCHAR(20)		 NULL ,
+		IMGNAME3                      		NVARCHAR(20)		 NULL ,
   FOREIGN KEY (AUTHOR) REFERENCES USERS (ID),
   FOREIGN KEY (CLASS_ID) REFERENCES CLASS (ID)
 );
 
 CREATE TABLE TAG(
 		ID                            		MEDIUMINT(20)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT,
-		NAME                          		VARCHAR(20)		 NOT NULL
+		NAME                          		NVARCHAR(20)		 NOT NULL
 );
 
 CREATE TABLE TAGLIST(
@@ -71,13 +71,13 @@ CREATE TABLE TAGLIST(
 CREATE TABLE ANSWER(
 		ID                            		MEDIUMINT(20)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT,
 		REGDATE                       		DATE		 NOT NULL,
-		AUTHOR                        		VARCHAR(20)		 NOT NULL,
+		AUTHOR                        		NVARCHAR(20)		 NOT NULL,
 		QUESTION_ID                   		MEDIUMINT(20)		 NOT NULL,
 		CONTENT                       		MEDIUMINT		 NOT NULL,
 		THUMBSUP                      		MEDIUMINT(10)		 DEFAULT 0		 NOT NULL,
-		IMGNAME1                      		VARCHAR(20)		 NULL ,
-		IMGNAME2                      		VARCHAR(20)		 NULL ,
-		IMGNAME3                      		VARCHAR(20)		 NULL ,
+		IMGNAME1                      		NVARCHAR(20)		 NULL ,
+		IMGNAME2                      		NVARCHAR(20)		 NULL ,
+		IMGNAME3                      		NVARCHAR(20)		 NULL ,
   FOREIGN KEY (AUTHOR) REFERENCES USERS (ID),
   FOREIGN KEY (QUESTION_ID) REFERENCES QUESTION (ID)
 );
@@ -85,7 +85,7 @@ CREATE TABLE ANSWER(
 CREATE TABLE ANSWER_THUMBSUP(
 		ID                            		MEDIUMINT(20)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT,
 		ANSWER_ID                     		MEDIUMINT(20)		 NOT NULL,
-		USER_ID                       		VARCHAR(20)		 NOT NULL,
+		USER_ID                       		NVARCHAR(20)		 NOT NULL,
   FOREIGN KEY (ANSWER_ID) REFERENCES ANSWER (ID),
   FOREIGN KEY (USER_ID) REFERENCES USERS (ID)
 );
@@ -93,8 +93,24 @@ CREATE TABLE ANSWER_THUMBSUP(
 CREATE TABLE QUESTION_THUMBSUP(
 		ID                            		MEDIUMINT(20)		 NOT NULL		 PRIMARY KEY AUTO_INCREMENT,
 		QUESTION_ID                   		MEDIUMINT(20)		 NOT NULL,
-		USER_ID                       		VARCHAR(20)		 NOT NULL,
+		USER_ID                       		NVARCHAR(20)		 NOT NULL,
   FOREIGN KEY (QUESTION_ID) REFERENCES QUESTION (ID),
   FOREIGN KEY (USER_ID) REFERENCES USERS (ID)
 );
 
+INSERT INTO CLASS VALUES (NULL,'BLOCKCHAIN',SYSDATE());
+INSERT INTO CLASS VALUES (NULL,'BIGDATA',SYSDATE());
+INSERT INTO CLASS VALUES (NULL,'IOT',SYSDATE());
+INSERT INTO CLASS VALUES (NULL,'블록체인',SYSDATE());
+
+
+
+INSERT INTO TAG VALUES (NULL,'JAVA');
+INSERT INTO TAG VALUES (NULL,'TOMCAT');
+INSERT INTO TAG VALUES (NULL,'UBUNTU');
+
+INSERT INTO QUESTION VALUES (NULL,'TITLE01','admin',0,SYSDATE(),'CONTENTS',1,'YSE',NULL,NULL,NULL);
+
+DESC QUESTION;
+SELECT * FROM TAG;
+SELECT * FROM CLASS;
